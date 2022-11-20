@@ -1,7 +1,6 @@
 package apeiron;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import java.awt.*;
 
 public class Values {
     private Dimension screenResolution = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
@@ -13,6 +12,17 @@ public class Values {
     public Dimension minSize = new Dimension(100, 100);
     public Dimension preferredSize = new Dimension(200, 100);
     public Dimension maxSize = new Dimension(350, 100);
+    
+    public Color transparent = new Color(0, 0, 0, 0);
+    public Color colorTest = Color.WHITE;
+    
+    public int textTopMargin = 30;
+    public int textLeftMargin = 300;
+    public int loginPanelMargin = 100;
+   
+    public Font largeFont = new Font(Font.SANS_SERIF, Font.BOLD, 30);
+    public Font mediumFont = new Font(Font.SANS_SERIF, Font.BOLD, 18);
+    public Font smallFont = new Font(Font.SANS_SERIF, Font.BOLD, 12);
     
 //    public void printTest() {
 //         System.out.println(screenResolution.width / ((double) 2/3));

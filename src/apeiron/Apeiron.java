@@ -1,20 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package apeiron;
 
-/**
- *
- * @author marvi
- */
 public class Apeiron {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         LoginPage loginPage = new LoginPage();
     }
     
 }
+
+/*
+TODOS
+
+- separate panels by classes
+- device independent: jframe should be the same aspect ratio on different devices
+- get true size of a panel
+- alignment of a component affects other component's alignment why?
+- what is jframe pack()
+- change constant values to a variable
+
+*/
