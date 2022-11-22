@@ -1,8 +1,13 @@
 package apeiron;
 
 import java.awt.*;
+import java.io.File;
+import javax.swing.ImageIcon;
 
 public class Values {
+    File resourcesFolder = new File(System.getProperty("user.dir") + "\\src\\resources");
+    ImageIcon apeironIcon = new ImageIcon(resourcesFolder + "\\apeiron.jpg");
+    
     private Dimension screenResolution = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
     public Dimension loginPageWindowSize = new Dimension (screenResolution.width / 2, screenResolution.height / 2);
     

@@ -11,7 +11,7 @@ public class Apeiron {
 /*
 TODOS
 
-- separate panels by classes
+- separate panels by functions
 - device independent: jframe should be the same aspect ratio on different devices
 - get true size of a panel
 - alignment of a component affects other component's alignment why?

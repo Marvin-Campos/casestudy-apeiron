@@ -17,6 +17,7 @@ public class LoginPage extends Values{
     private void run() {
         //setup Login Page frame
         loginPageWindow.setSize(loginPageWindowSize);
+        loginPageWindow.setIconImage(apeironIcon.getImage());
         loginPageWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //setup Login Page panel
@@ -86,17 +87,48 @@ public class LoginPage extends Values{
         JButton loginButton = new JButton("L O G I N");
         loginButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
         
-        JLabel otherSignInSubText = new JLabel("or sign in using the following");
+        JLabel otherSignInSubText = new JLabel("or sign in using the following:");
         otherSignInSubText.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         otherSignInSubText.setFont(smallFont);
         
+        //////////////////// REFACTOR TO FUNCTIONS
         JPanel socialMediaLogoPanel = new JPanel();
         socialMediaLogoPanel.setLayout(new FlowLayout());
-        socialMediaLogoPanel.setBackground(Color.MAGENTA);
-        socialMediaLogoPanel.setBorder(BorderFactory.createMatteBorder(50, 0, 0, 0, colorTest));
-        socialMediaLogoPanel.add(new JLabel("Image"));
-        socialMediaLogoPanel.add(new JLabel("Image"));
-        socialMediaLogoPanel.add(new JLabel("Image"));
+        socialMediaLogoPanel.setBackground(Color.WHITE);
+        socialMediaLogoPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 50, 0, colorTest));
+        
+        ImageIcon fb_icon = new ImageIcon(resourcesFolder + "\\fb_icon.png");
+        ImageIcon google_icon = new ImageIcon(resourcesFolder + "\\google_icon.png");
+        ImageIcon twt_icon = new ImageIcon(resourcesFolder + "\\twt_icon.png");
+        fb_icon = imageIconResize(fb_icon, 30, 30);
+        google_icon = imageIconResize(google_icon, 30, 30);
+        twt_icon = imageIconResize(twt_icon, 30, 30);
+          
+        JButton socialMedia1Button = new JButton(fb_icon);
+        socialMedia1Button.setBorder(BorderFactory.createEmptyBorder());
+        socialMedia1Button.setContentAreaFilled(false);
+        socialMedia1Button.addActionListener((e) -> { System.out.println("clicked");
+        });
+        
+        JButton socialMedia2Button = new JButton(google_icon);
+        socialMedia2Button.setBorder(BorderFactory.createEmptyBorder());
+        socialMedia2Button.setContentAreaFilled(false);
+        socialMedia2Button.addActionListener((e) -> { System.out.println("clicked");
+        });
+        
+        JButton socialMedia3Button = new JButton(twt_icon);
+        socialMedia3Button.setBorder(BorderFactory.createEmptyBorder());
+        socialMedia3Button.setContentAreaFilled(false);
+        socialMedia3Button.addActionListener((e) -> { System.out.println("clicked");
+        });
+        
+        
+        socialMediaLogoPanel.add(socialMedia1Button);
+        socialMediaLogoPanel.add(socialMedia2Button);
+        socialMediaLogoPanel.add(socialMedia3Button);
+        
+       
+        ////////////////
 
         loginPanel.add(loginText);
         loginPanel.add(loginSubText);
@@ -107,6 +139,14 @@ public class LoginPage extends Values{
         loginPanel.add(loginButton);
         loginPanel.add(otherSignInSubText);
         loginPanel.add(socialMediaLogoPanel);
+    }
+    
+    private ImageIcon imageIconResize(ImageIcon imageIcon, int width, int height) {
+        Image image = imageIcon.getImage();
+
+        Image resizedImage = image.getScaledInstance(width, height,  java.awt.Image.SCALE_SMOOTH);
+
+        return new ImageIcon(resizedImage);
     }
     
     private void infoPanelSetup() {
