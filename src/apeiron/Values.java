@@ -6,10 +6,10 @@ import javax.swing.ImageIcon;
 
 public class Values {
     File resourcesFolder = new File(System.getProperty("user.dir") + "\\src\\resources");
-    ImageIcon apeironIcon = new ImageIcon(resourcesFolder + "\\apeiron.jpg");
+    ImageIcon apeironIcon = new ImageIcon(resourcesFolder + "\\apeiron_logo.png");
     
-    private Dimension screenResolution = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
-    public Dimension windowSize = new Dimension (screenResolution.width / 2, screenResolution.height / 2);
+    //hard coded resolution
+    public Dimension windowSize = new Dimension (1920 / 2, 1080 / 2);
     
 //    public Dimension twoByThree = new Dimension(screenResolution.width / ((double) 2/3), screenResolution.height / ((double) 2/3));
 //    public Dimension oneByThree = screenResolution.width - width_2by3;

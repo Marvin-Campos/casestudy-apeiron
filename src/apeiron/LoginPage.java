@@ -32,7 +32,6 @@ public class LoginPage extends Values {
     private void loginPanelSetup() {
         JPanel loginPanel = new JPanel();
         loginPanel.setLayout(new BoxLayout(loginPanel, BoxLayout.PAGE_AXIS));
-        //fix: change constant to variable
         loginPanel.setPreferredSize(new Dimension(600, 100));
         loginPanel.setBackground(colorTest);
         loginPagePanel.add(loginPanel, BorderLayout.WEST);
@@ -157,7 +156,6 @@ public class LoginPage extends Values {
     private void infoPanelSetup() {
         JPanel infoPanel = new JPanel();
 
-        //fix: change constant to variable
         infoPanel.setPreferredSize(new Dimension(300, 100));
         infoPanel.setBackground(Color.WHITE);
         loginPagePanel.add(infoPanel, BorderLayout.EAST);
