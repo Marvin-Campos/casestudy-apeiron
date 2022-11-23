@@ -19,4 +19,4 @@ TODOS
 - change constant values to a variable
 
 */
-// AYYY LMAO
+// AYYY LMAO SQUARED
