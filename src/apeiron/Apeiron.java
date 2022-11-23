@@ -16,4 +16,6 @@ TODOS
 - get true size of a panel
 - what is jframe pack()
 
+START 1.0
+
 */
