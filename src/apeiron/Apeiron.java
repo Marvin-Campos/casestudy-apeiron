@@ -19,5 +19,3 @@ TODOS
 - change constant values to a variable
 
 */
-
-//AYYYY LMAO AUSTIN WAS HERE LMAOOO
