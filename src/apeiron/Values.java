@@ -2,7 +2,9 @@ package apeiron;
 
 import java.awt.*;
 import java.io.File;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class Values {
     File resourcesFolder = new File(System.getProperty("user.dir") + "\\src\\resources");
@@ -28,6 +30,31 @@ public class Values {
     public Font largeFont = new Font(Font.SANS_SERIF, Font.BOLD, 30);
     public Font mediumFont = new Font(Font.SANS_SERIF, Font.BOLD, 18);
     public Font smallFont = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+    
+     public JLabel textSetup(String text, Font fontSize) {
+        JLabel textLabel = new JLabel(text);
+        textLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        textLabel.setFont(fontSize);
+        
+        return textLabel;
+    }
+
+    public JLabel textSetup(String text, Font fontSize, int topMargin, int rightMargin) {
+        JLabel textLabel = new JLabel(text);
+        textLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        textLabel.setFont(fontSize);
+        textLabel.setBorder(BorderFactory.createMatteBorder(topMargin, 0, 0, rightMargin, colorTest));
+        
+        return textLabel;
+    }
+    
+    public ImageIcon imageIconResize(ImageIcon imageIcon, int width, int height) {
+        Image image = imageIcon.getImage();
+
+        Image resizedImage = image.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
+
+        return new ImageIcon(resizedImage);
+    }
     
 //    public void printTest() {
 //         System.out.println(screenResolution.width / ((double) 2/3));

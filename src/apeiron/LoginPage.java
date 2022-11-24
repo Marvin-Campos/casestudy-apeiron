@@ -16,6 +16,7 @@ public class LoginPage extends Values {
         //setup Login Page frame
         loginPageWindow.setSize(windowSize);
         loginPageWindow.setIconImage(apeironIcon.getImage());
+        loginPageWindow.setResizable(false);
         loginPageWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //setup Login Page panel
@@ -68,23 +69,7 @@ public class LoginPage extends Values {
         loginPanel.add(socialMediaLogoPanel);
     }
     
-    private JLabel textSetup(String text, Font fontSize) {
-        JLabel textLabel = new JLabel(text);
-        textLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        textLabel.setFont(fontSize);
-        
-        return textLabel;
-    }
-
-    private JLabel textSetup(String text, Font fontSize, int topMargin, int rightMargin) {
-        JLabel textLabel = new JLabel(text);
-        textLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        textLabel.setFont(fontSize);
-        textLabel.setBorder(BorderFactory.createMatteBorder(topMargin, 0, 0, rightMargin, colorTest));
-        
-        return textLabel;
-    }
-    
+   
     private JPanel inputFieldSetup(String placeholder, int topMargin, int bottomMargin) {
         JPanel textFieldPanel = new JPanel();
         textFieldPanel.setLayout(new BoxLayout(textFieldPanel, BoxLayout.PAGE_AXIS));
@@ -138,14 +123,6 @@ public class LoginPage extends Values {
         socialMediaLogoPanel.add(googleButton);
 
         return socialMediaLogoPanel;
-    }
-
-    private ImageIcon imageIconResize(ImageIcon imageIcon, int width, int height) {
-        Image image = imageIcon.getImage();
-
-        Image resizedImage = image.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
-
-        return new ImageIcon(resizedImage);
     }
 
     private void proceedToMenuPage() {
