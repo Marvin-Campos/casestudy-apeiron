@@ -26,8 +26,11 @@ public class Values {
     public int loginPanelMargin = 100;
    
     public Font largeFont = new Font(Font.SANS_SERIF, Font.BOLD, 30);
+    public Font largeFontUnbold = new Font(Font.SANS_SERIF, Font.PLAIN, 30);
     public Font mediumFont = new Font(Font.SANS_SERIF, Font.BOLD, 18);
     public Font smallFont = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+    public Font smallFontUnbold = new Font(Font.SANS_SERIF, Font.PLAIN, 12);
+    public Font tinyFontUnbold = new Font(Font.SANS_SERIF, Font.PLAIN, 8);
     
 //    public void printTest() {
 //         System.out.println(screenResolution.width / ((double) 2/3));

@@ -15,8 +15,5 @@ TODOS
 - device independent: jframe should be the same aspect ratio on different devices
 - get true size of a panel
 - what is jframe pack()
-
-START 1.0
-test
+Testing NetBeans
 */
-//RECOVER????
