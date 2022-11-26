@@ -18,7 +18,8 @@ public class LoginPage extends Values {
         loginPageWindow.setIconImage(apeironIcon.getImage());
         loginPageWindow.setResizable(false);
         loginPageWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        loginPageWindow.setResizable(false);
+        
         //setup Login Page panel
         loginPagePanel.setLayout(new BorderLayout());
         loginPagePanel.setBorder(BorderFactory.createLineBorder(colorTest, 20));
@@ -132,9 +133,87 @@ public class LoginPage extends Values {
     
     private void infoPanelSetup() {
         JPanel infoPanel = new JPanel();
+        JLabel welcomeText = new JLabel("Shop for PC Parts");
+        JLabel welcomeSubText = new JLabel("Affordable, trusted, and all perfect");
+        JLabel welcomeSubTextTwo = new JLabel("for your newest PC builds");
+        JLabel foundersText = new JLabel("           FOUNDERS             "); // USING WHITEPACES AS BAND-AID SINCE IDK WHAT I'M DOING
+        JLabel marvinCampos = new JLabel("  Marvin Campos              "); 
+        JLabel seanSerrano = new JLabel("                     Sean Serrano");
+        JLabel warningOne = new JLabel("APEIRON TECHNOLOGIES IS  A FICTIONAL COMPANY, ANY");
+        JLabel warningTwo = new JLabel("RESEBLANCE TO REAL EVENTS ARE PURELY COINCIDENTAL");
 
         infoPanel.setPreferredSize(new Dimension(300, 100));
         infoPanel.setBackground(Color.WHITE);
         loginPagePanel.add(infoPanel, BorderLayout.EAST);
+        
+        welcomeText.setBounds(0,0,0,0);
+        welcomeText.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        welcomeText.setFont(largeFontUnbold);
+        
+        welcomeSubText.setBounds(0,0,0,0);
+        welcomeSubText.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        welcomeSubText.setFont(smallFontUnbold);
+        
+        welcomeSubTextTwo.setBounds(0,0,0,0);
+        welcomeSubTextTwo.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        welcomeSubTextTwo.setFont(smallFontUnbold);
+        
+        // Bro idk how to add a space so this is my band-aid solutionj
+        
+        ImageIcon dividerOneImg = new ImageIcon(resourcesFolder + "\\divider.png");
+        dividerOneImg = imageIconResize(dividerOneImg, 2000, 20);
+        JLabel dividerOne = new JLabel(dividerOneImg);
+
+        foundersText.setBounds(50, 650, 50, 50);
+        
+        ImageIcon dividerTwoImg = new ImageIcon(resourcesFolder + "\\divider.png");
+        dividerTwoImg = imageIconResize(dividerTwoImg, 5, 20);
+        JLabel dividerTwo = new JLabel(dividerTwoImg);
+        
+        // random band-aid ends here //
+        
+        ImageIcon marvImage = new ImageIcon(resourcesFolder + "\\marvs.png");
+        marvImage = imageIconResize(marvImage, 50, 50);
+        JLabel marvImageIcon = new JLabel(marvImage);
+        
+        ImageIcon austImage = new ImageIcon(resourcesFolder + "\\aust.png");
+        austImage = imageIconResize(austImage, 50, 50);
+        JLabel austImageIcon = new JLabel(austImage);
+        
+        marvinCampos.setBounds(50, 700, 50, 50);
+        seanSerrano.setBounds(50, 750, 50, 50);
+        
+        ImageIcon dividerThreeImg = new ImageIcon(resourcesFolder + "\\divider.png");
+        dividerThreeImg = imageIconResize(dividerThreeImg, 2000, 20);
+        JLabel dividerThree = new JLabel(dividerThreeImg);
+        
+        warningOne.setBounds(50, 800, 50, 50);
+        warningOne.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        warningOne.setFont(tinyFontUnbold);
+        
+        warningTwo.setBounds(50, 850, 50, 50);
+        warningTwo.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        warningTwo.setFont(tinyFontUnbold);
+   
+        ImageIcon apeironLogo = new ImageIcon(resourcesFolder + "\\apeiron_logo.png");
+        apeironLogo = imageIconResize(apeironLogo, 200, 200);
+      
+        JLabel apeironImage = new JLabel(apeironLogo);
+        
+        infoPanel.add(apeironImage);
+        infoPanel.add(welcomeText);
+        infoPanel.add(welcomeSubText);
+        infoPanel.add(welcomeSubTextTwo);
+        infoPanel.add(dividerOne);
+        infoPanel.add(dividerTwo);
+        infoPanel.add(marvImageIcon);
+        infoPanel.add(foundersText);
+        infoPanel.add(austImageIcon);
+        infoPanel.add(marvinCampos);
+        infoPanel.add(seanSerrano);
+        infoPanel.add(dividerThree);
+        infoPanel.add(warningOne);
+        infoPanel.add(warningTwo);
+        
     }
 }
