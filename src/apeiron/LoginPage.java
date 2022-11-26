@@ -38,15 +38,15 @@ public class LoginPage extends Values {
         loginPanel.setBackground(colorTest);
         loginPagePanel.add(loginPanel, BorderLayout.WEST);
 
-        JLabel loginText = textSetup("LOGIN", largeFont);
+        JLabel loginText = textSetup("LOGIN", largeFontBold);
 
-        JLabel loginSubText = textSetup("Log in using your credentials", mediumFont);
+        JLabel loginSubText = textSetup("Log in using your credentials", mediumFontBold);
 
-        JLabel usernameText = textSetup("Username", mediumFont, loginPanelTextTopMargin, loginPanelTextRightMargin);
+        JLabel usernameText = textSetup("Username", mediumFontBold, loginPanelTextTopMargin, loginPanelTextRightMargin);
 
         JPanel usernameTextFieldPanel = inputFieldSetup("Type your username", 0, 0);
 
-        JLabel passwordText =  textSetup("Password", mediumFont, loginPanelTextTopMargin, loginPanelTextRightMargin);
+        JLabel passwordText =  textSetup("Password", mediumFontBold, loginPanelTextTopMargin, loginPanelTextRightMargin);
 
         JPanel passwordTextFieldPanel = inputFieldSetup("Type your password", 0, 50);
 
@@ -55,7 +55,7 @@ public class LoginPage extends Values {
         loginButton.addActionListener((e) -> { proceedToMenuPage();
         });
 
-        JLabel otherSignInSubText = textSetup("or sign in using the following:", smallFont);
+        JLabel otherSignInSubText = textSetup("or sign in using the following:", smallFontBold);
 
         JPanel socialMediaLogoPanel = socialMediaPanelSetup();
 
@@ -78,7 +78,7 @@ public class LoginPage extends Values {
 
         JTextField textField = new JTextField(placeholder);
         textField.setForeground(Color.GRAY);
-        textField.setFont(smallFont);
+        textField.setFont(smallFontBold);
 
         textFieldPanel.add(textField);
 
@@ -148,15 +148,15 @@ public class LoginPage extends Values {
         
         welcomeText.setBounds(0,0,0,0);
         welcomeText.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        welcomeText.setFont(largeFontUnbold);
+        welcomeText.setFont(largeFontPlain);
         
         welcomeSubText.setBounds(0,0,0,0);
         welcomeSubText.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        welcomeSubText.setFont(smallFontUnbold);
+        welcomeSubText.setFont(smallFontPlain);
         
         welcomeSubTextTwo.setBounds(0,0,0,0);
         welcomeSubTextTwo.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        welcomeSubTextTwo.setFont(smallFontUnbold);
+        welcomeSubTextTwo.setFont(smallFontPlain);
         
         // Bro idk how to add a space so this is my band-aid solutionj
         
@@ -189,11 +189,11 @@ public class LoginPage extends Values {
         
         warningOne.setBounds(50, 800, 50, 50);
         warningOne.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        warningOne.setFont(tinyFontUnbold);
+        warningOne.setFont(tinyFontPlain);
         
         warningTwo.setBounds(50, 850, 50, 50);
         warningTwo.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        warningTwo.setFont(tinyFontUnbold);
+        warningTwo.setFont(tinyFontPlain);
    
         ImageIcon apeironLogo = new ImageIcon(resourcesFolder + "\\apeiron_logo.png");
         apeironLogo = imageIconResize(apeironLogo, 200, 200);

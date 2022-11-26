@@ -35,9 +35,9 @@ public class MenuPage extends Values {
         itemPanel.setBackground(Color.ORANGE);
         menuPagePanel.add(itemPanel, BorderLayout.WEST);
 
-        JLabel titleText = textSetup("APEIRON", mediumFont);
+        JLabel titleText = textSetup("APEIRON", mediumFontBold);
         
-        JLabel itemFilterText = textSetup("ALL ITEMS BY CATEGORY", smallFont);
+        JLabel itemFilterText = textSetup("ALL ITEMS BY CATEGORY", smallFontBold);
         
         JScrollPane itemGridPanel = itemGridPanelSetup();
         

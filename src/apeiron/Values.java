@@ -27,12 +27,12 @@ public class Values {
     public int loginPanelTextRightMargin = 300;
     public int loginPanelMargin = 100;
    
-    public Font largeFont = new Font(Font.SANS_SERIF, Font.BOLD, 30);
-    public Font largeFontUnbold = new Font(Font.SANS_SERIF, Font.PLAIN, 30);
-    public Font mediumFont = new Font(Font.SANS_SERIF, Font.BOLD, 18);
-    public Font smallFont = new Font(Font.SANS_SERIF, Font.BOLD, 12);
-    public Font smallFontUnbold = new Font(Font.SANS_SERIF, Font.PLAIN, 12);
-    public Font tinyFontUnbold = new Font(Font.SANS_SERIF, Font.PLAIN, 8);
+    public Font largeFontBold = new Font(Font.SANS_SERIF, Font.BOLD, 30);
+    public Font largeFontPlain = new Font(Font.SANS_SERIF, Font.PLAIN, 30);
+    public Font mediumFontBold = new Font(Font.SANS_SERIF, Font.BOLD, 18);
+    public Font smallFontBold = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+    public Font smallFontPlain = new Font(Font.SANS_SERIF, Font.PLAIN, 12);
+    public Font tinyFontPlain = new Font(Font.SANS_SERIF, Font.PLAIN, 8);
     
      public JLabel textSetup(String text, Font fontSize) {
         JLabel textLabel = new JLabel(text);
