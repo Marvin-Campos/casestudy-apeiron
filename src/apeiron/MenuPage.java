@@ -78,9 +78,6 @@ public class MenuPage extends Values {
         return itemGridPanel;
     }
 
-    JPanel itempanel = new JPanel();
-    JScrollPane itemgridpanel = new JScrollPane();
-
     private void filterPanelSetup() {
         JPanel filterPanel = new JPanel();
 
