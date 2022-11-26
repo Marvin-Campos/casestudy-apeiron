@@ -57,7 +57,7 @@ public class MenuPage extends Values {
         gbc.insets = new Insets(20, 20, 20, 20);
         
         int itemCounter = 1;
-        for (int i = 1; i <= 10; i++) { //i = number of rows       
+        for (int i = 1; i <= 20; i++) { //i = number of rows       
             for (int j = 1; j <= 3; j++) { //j = number of columns
                 
                 JPanel item = new JPanel();

@@ -11,13 +11,5 @@ public class Apeiron {
 
 /*
 TODOS
-
-- get true size of a panel
-- what is jframe pack()
-
-*/
-
-/*
-DONE
-- locked jframes to unresizable and also chose 1 resolution for all devices
+//dark mode???
 */
