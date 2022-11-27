@@ -13,9 +13,6 @@ public class Values {
     //hard coded resolution
     public Dimension windowSize = new Dimension (1920 / 2, 1080 / 2);
     
-//    public Dimension twoByThree = new Dimension(screenResolution.width / ((double) 2/3), screenResolution.height / ((double) 2/3));
-//    public Dimension oneByThree = screenResolution.width - width_2by3;
-    
     public Dimension minSize = new Dimension(100, 100);
     public Dimension preferredSize = new Dimension(200, 100);
     public Dimension maxSize = new Dimension(350, 100);
