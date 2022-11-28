@@ -4,7 +4,7 @@ public class Apeiron {
 
     public static void main(String[] args) {
         
-    MenuPage menuPage = new MenuPage();
+    LoginPage loginPage = new LoginPage();
     }
     
 }

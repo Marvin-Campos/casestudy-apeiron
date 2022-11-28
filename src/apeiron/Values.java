@@ -30,6 +30,7 @@ public class Values {
     public Font largeFontBold = new Font(Font.SANS_SERIF, Font.BOLD, 30);
     public Font largeFontPlain = new Font(Font.SANS_SERIF, Font.PLAIN, 30);
     public Font mediumFontBold = new Font(Font.SANS_SERIF, Font.BOLD, 18);
+    public Font mediumFontPlain = new Font(Font.SANS_SERIF, Font.PLAIN, 18);
     public Font smallFontBold = new Font(Font.SANS_SERIF, Font.BOLD, 12);
     public Font smallFontPlain = new Font(Font.SANS_SERIF, Font.PLAIN, 12);
     public Font tinyFontPlain = new Font(Font.SANS_SERIF, Font.PLAIN, 8);
