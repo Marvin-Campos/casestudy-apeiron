@@ -82,7 +82,42 @@ public class MenuPage extends Values {
         JPanel filterPanel = new JPanel();
 
         filterPanel.setPreferredSize(new Dimension(300, 100));
-        filterPanel.setBackground(Color.GREEN);
+        filterPanel.setBackground(Color.WHITE);
         menuPagePanel.add(filterPanel, BorderLayout.EAST);
+        
+        // PERIPHERALS (LARGE TEXT, BOLD)
+        
+        // FILTER BY PERIPHERLAS (SMALL TEXT)
+        
+        // KEYBOARD (MEDIUM, CHECKBOX)
+        
+        // WEBCAM (MEDIUM, CHECKBOX)
+        
+        // CHASSIS (MEDIUM, CHECKBOX)
+        
+        // MONITOR (MEDIUM, CHECKBOX)
+        
+        // MOUSE (MEDIUM, CHECKBOX)
+        
+        // DIVIDER (OR NOT IF SPACE IS NOT ENOUGH)
+        
+        // COMPONENTS (LARGE TEXT, BOLD)
+        
+        // FILTER BY COMPONENTS (SMALL TEXT)
+        
+        // CPU (MEDIUM, CHECKBOX)
+        
+        // GPU (MEDIUM, CHECKBOX)
+        
+        // RAM (MEDIUM, CHECKBOX)
+        
+        // STORAGE (MEDIUM, CHECKBOX)
+        
+        // STORAGE (MEDIUM, CHECKBOX)
+        
+        // FILTER (JBUTTON)
+        
+        // CART (JBUTTON)
+
     }
 }
