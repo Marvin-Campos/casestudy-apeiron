@@ -117,6 +117,8 @@ public class MenuPage extends Values {
         
         // FILTER (JBUTTON)
         
+        // UNFILTER (JBUTTON)
+        
         // CART (JBUTTON)
 
     }
