@@ -50,15 +50,6 @@ public class Values {
     }
     
     
-//     public JLabel textSetupOffsetToCenter(String text, Font fontSize) {
-//        JLabel textLabel = new JLabel(text);
-//        textLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-//        textLabel.setFont(fontSize);
-//        textLabel.setBorder(BorderFactory.createMatteBorder(0, 150, 0, 0, Color.CYAN));
-//        
-//        return textLabel;
-//    }
-    
     public ImageIcon imageIconResize(ImageIcon imageIcon, int width, int height) {
         Image image = imageIcon.getImage();
 

@@ -35,7 +35,7 @@ public class LoginPage extends Values {
         JPanel loginPanel = new JPanel();
         loginPanel.setLayout(new BoxLayout(loginPanel, BoxLayout.PAGE_AXIS));
         loginPanel.setPreferredSize(new Dimension(600, 100));
-        loginPanel.setBackground(colorTest);
+        loginPanel.setBackground(Color.WHITE);
         loginPagePanel.add(loginPanel, BorderLayout.WEST);
 
         JLabel loginText = textSetup("LOGIN", largeFontBold);

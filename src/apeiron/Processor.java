@@ -1,6 +1,7 @@
 
 package apeiron;
 
+import java.awt.Color;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;

@@ -1,10 +1,7 @@
 package apeiron;
 
 import java.awt.*;
-import java.lang.reflect.Field;
 import javax.swing.*;
-
-
 
 public class MenuPage extends Values {
 
@@ -24,7 +21,7 @@ public class MenuPage extends Values {
 
         menuPagePanel.setLayout(new BorderLayout());
         menuPagePanel.setBorder(BorderFactory.createLineBorder(colorTest, 20));
-        menuPagePanel.setBackground(Color.WHITE); // Austin added this because shit
+        menuPagePanel.setBackground(Color.white); // Austin added this because shit
         menuPageWindow.add(menuPagePanel);
 
         itemPanelSetup();
@@ -36,7 +33,7 @@ public class MenuPage extends Values {
     private void itemPanelSetup() {
         JPanel itemPanel = new JPanel();
         itemPanel.setLayout(new BoxLayout(itemPanel, BoxLayout.PAGE_AXIS));
-        itemPanel.setPreferredSize(new Dimension(600, 100));
+        itemPanel.setPreferredSize(new Dimension(610, 100));
         itemPanel.setBackground(colorTest);
         menuPagePanel.add(itemPanel, BorderLayout.WEST);
 
@@ -87,12 +84,13 @@ public class MenuPage extends Values {
     Processor processor2 = new Processor(2, 4, true, true, "AMD", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor3 = new Processor(2, 4, true, true, "Superposition 03-301P", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor4 = new Processor(2, 4, true, true, "Ligma Processor", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-    PC_Parts[] items = {processor1, processor2, processor3, processor4};
+    Processor processor5 = new Processor(2, 4, true, true, "Apeiron Premium", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
+    PC_Parts[] items = {processor1, processor2, processor3, processor4, processor5};
 
     private JScrollPane itemGridPanelSetup_Real() {
 
         JPanel itemGrid = new JPanel(new GridBagLayout());
-        JScrollPane itemGridPanel = new JScrollPane(itemGrid, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        JScrollPane itemGridPanel = new JScrollPane(itemGrid, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -135,14 +133,13 @@ public class MenuPage extends Values {
         
         JPanel filterPanel = new JPanel();
         BoxLayout boxLayout = new BoxLayout(filterPanel,BoxLayout.Y_AXIS); // Box Layout
-        filterPanel.setOpaque(false); // temp gray background cuz idk how to fix this
         filterPanel.setLayout(boxLayout);
-        filterPanel.setBackground(Color.white);
+        filterPanel.setBackground(Color.WHITE);
         filterPanel.setPreferredSize(new Dimension(280, 1000));
         menuPagePanel.add(filterPanel, BorderLayout.EAST);
         
         JLabel peripherals = new JLabel("PERIPHERALS");
-        JLabel filterPeripherals = new JLabel(" FILTER BY PERiPHERALS");
+        JLabel filterPeripherals = new JLabel(" FILTER BY PERIPHERALS");
         JCheckBox keyboard = new JCheckBox ("KEYBOARD");
         JCheckBox webcam = new JCheckBox("WEBCAM");
         JCheckBox chassis = new JCheckBox("CHASSIS");
