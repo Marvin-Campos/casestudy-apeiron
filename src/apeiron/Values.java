@@ -43,7 +43,7 @@ public class Values {
         JLabel textLabel = new JLabel(text);
         textLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         textLabel.setFont(fontSize);
-        textLabel.setBorder(BorderFactory.createMatteBorder(topMargin, 0, 0, rightMargin, Color.CYAN));
+        textLabel.setBorder(BorderFactory.createMatteBorder(topMargin, 0, 0, rightMargin, colorTest));
         
         return textLabel;
     }

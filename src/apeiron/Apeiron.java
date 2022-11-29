@@ -5,8 +5,8 @@ import java.lang.reflect.Field;
 public class Apeiron {
 
     public static void main(String[] args) {
-//        LoginPage loginPage = new LoginPage();
-        MenuPage menuPage = new MenuPage();
+        LoginPage loginPage = new LoginPage();
+//        MenuPage menuPage = new MenuPage();
 
 //        Processor processor = new Processor();
 //        
