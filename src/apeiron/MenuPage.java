@@ -3,12 +3,13 @@ package apeiron;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;  
+import java.util.Vector;
 
 public class MenuPage extends Values{
 
-
     JFrame menuPageWindow = new JFrame("Menu");
     JPanel menuPagePanel = new JPanel();
+    JPanel itemPanel = new JPanel();
     
     // for sidePanel (Had to make them global variables so that filter and
     // unfilter methods could access these variables.
@@ -31,9 +32,7 @@ public class MenuPage extends Values{
     JButton unfilter = new JButton("                                  UNFILTER                               ");
     // I'm sorry for using such a crude solution to center the buttons HAHAHAHAHAHAAHA  
         JButton cart = new JButton("                                      CART                                   ");
-       
-    
-    
+
     public MenuPage() {
         run();
     }
@@ -49,14 +48,14 @@ public class MenuPage extends Values{
         menuPagePanel.setBackground(Color.white); // Austin added this because shit
         menuPageWindow.add(menuPagePanel);
 
-        itemPanelSetup();
+        itemPanelSetup(items);
         filterPanelSetup();
 
         menuPageWindow.setVisible(true);
     }
 
-    private void itemPanelSetup() {
-        JPanel itemPanel = new JPanel();
+    private void itemPanelSetup(PC_Parts[] items) {
+        itemPanel.removeAll();
         itemPanel.setLayout(new BoxLayout(itemPanel, BoxLayout.PAGE_AXIS));
         itemPanel.setPreferredSize(new Dimension(610, 100));
         itemPanel.setBackground(colorTest);
@@ -66,11 +65,14 @@ public class MenuPage extends Values{
 
         JLabel itemFilterText = textSetup("ALL ITEMS BY CATEGORY", smallFontBold);
 
-        JScrollPane itemGridPanel = itemGridPanelSetup_Real();
+        JScrollPane itemGridPanel = itemGridPanelSetup_Real(items);
 
         itemPanel.add(titleText);
         itemPanel.add(itemFilterText);
         itemPanel.add(itemGridPanel);
+        
+        itemPanel.revalidate();
+        itemPanel.repaint();
     }
 
     //Populate itemgridpanel with items
@@ -110,9 +112,10 @@ public class MenuPage extends Values{
     Processor processor3 = new Processor(2, 4, true, true, "Superposition 03-301P", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor4 = new Processor(2, 4, true, true, "Ligma Processor", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor5 = new Processor(2, 4, true, true, "Apeiron Premium", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-    PC_Parts[] items = {processor1, processor2, processor3, processor4, processor5};
+    Keyboard kb1 = new Keyboard(100, 84, "white", true, "Keyboard", 3000, "6789", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
+    PC_Parts[] items = {processor1, processor2, processor3, processor4, processor5, kb1};
 
-    private JScrollPane itemGridPanelSetup_Real() {
+    private JScrollPane itemGridPanelSetup_Real(PC_Parts[] items) {
 
         JPanel itemGrid = new JPanel(new GridBagLayout());
         JScrollPane itemGridPanel = new JScrollPane(itemGrid, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -161,27 +164,6 @@ public class MenuPage extends Values{
         filterPanel.setBackground(Color.WHITE);
         filterPanel.setPreferredSize(new Dimension(280, 1000));
         menuPagePanel.add(filterPanel, BorderLayout.EAST);
-        
-
-//        JLabel peripherals = new JLabel("PERIPHERALS");
-//        JLabel filterPeripherals = new JLabel(" FILTER BY PERIPHERALS");
-//        JCheckBox keyboard = new JCheckBox ("KEYBOARD");
-//        JCheckBox webcam = new JCheckBox("WEBCAM");
-//        JCheckBox chassis = new JCheckBox("CHASSIS");
-//        JCheckBox monitor = new JCheckBox("MONITOR");
-//        JCheckBox mouse = new JCheckBox("MOUSE");
-//        JLabel components = new JLabel("COMPONENTS");
-//        JLabel filterComponents = new JLabel(" FILTER BY COMPONENTS");
-//        JCheckBox cpu = new JCheckBox("CPU");
-//        JCheckBox gpu = new JCheckBox("GPU");
-//        JCheckBox ram = new JCheckBox("RAM");
-//        JCheckBox storage = new JCheckBox("STORAGE");
-//        JCheckBox mobo = new JCheckBox("MOTHERBOARD");
-//        JButton filter = new JButton("                                     FILTER                                "); 
-//        JButton unfilter = new JButton("                                  UNFILTER                               "); 
-//        // I'm sorry for using such a crude solution to center the buttons HAHAHAHAHAHAAHA  
-//        JButton cart = new JButton("                                      CART                                   ");
-       
         
         filter.addActionListener((e) -> { filterButton();});
         unfilter.addActionListener((e) -> { unfilterButton();});
@@ -309,37 +291,76 @@ public class MenuPage extends Values{
         
     }
 
+    Vector<PC_Parts> filteredItems = new Vector<PC_Parts>();
+    
     private void filterButton(){
+        filteredItems.clear();
         if (keyboard.isSelected()){
             System.out.println("Keyboard Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Keyboard) { filteredItems.add(item); }
+            }
         }
         if (webcam.isSelected()){
             System.out.println("Webcam Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Webcam) { filteredItems.add(item); }
+            }
         }
         if (chassis.isSelected()){
             System.out.println("Chassis Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Chassis) { filteredItems.add(item); }
+            }
         }
         if (monitor.isSelected()){
             System.out.println("Monitor Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Monitor) { filteredItems.add(item); }
+            }
         }
         if (mouse.isSelected()){
             System.out.println("Mouse Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Mouse) { filteredItems.add(item); }
+            }
         }
         if (cpu.isSelected()){
             System.out.println("CPU Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Processor) { filteredItems.add(item); }
+            }
         }
         if (gpu.isSelected()){
             System.out.println("GPU Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Graphics) { filteredItems.add(item); }
+            }
         }
         if (ram.isSelected()){
             System.out.println("RAM Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Memory) { filteredItems.add(item); }
+            }
         }
         if (storage.isSelected()){
             System.out.println("Storage Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Storage) { filteredItems.add(item); }
+            }
         }
         if (mobo.isSelected()){
             System.out.println("Motherboard Selected.\n");
+            for (PC_Parts item: items) {
+                if(item instanceof Motherboard) { filteredItems.add(item); }
+            }
         }
+        
+        for(PC_Parts filteredItem : filteredItems) {
+            System.out.println(filteredItem.getName());
+        }
+        PC_Parts[] arrayFilteredItems = filteredItems.toArray(new PC_Parts[filteredItems.size()]);
+        itemPanelSetup(arrayFilteredItems);
     }
     
     private void unfilterButton(){
