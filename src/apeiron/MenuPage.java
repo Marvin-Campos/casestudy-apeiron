@@ -10,11 +10,15 @@ public class MenuPage extends Values{
     //Sample Items
     Processor processor1 = new Processor(2, 4, true, true, "Intel Core I9", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor2 = new Processor(2, 4, true, true, "AMD", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-    Processor processor3 = new Processor(2, 4, true, true, "Superposition 03-301P", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
+    Processor processor3 = new Processor(2, 4, true, true, "SP 03-301P", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor4 = new Processor(2, 4, true, true, "Ligma Processor", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor5 = new Processor(2, 4, true, true, "Apeiron Premium", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
+    
+    Graphics gpu1 = new Graphics(2, 3, 8, true, true, "RTX 3060", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\aust.png"));
+    Graphics gpu2 = new Graphics(2, 3, 8, true, true, "Maangas na GPU", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\marvs.png"));
+    
     Keyboard kb1 = new Keyboard(100, 84, "white", true, "Keyboard", 3000, "6789", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-    PC_Parts[] items = {processor1, processor2, processor3, processor4, processor5, kb1};
+    PC_Parts[] items = {processor1, processor2, processor3, processor4, processor5, kb1, gpu1, gpu2};
   
     JFrame menuPageWindow = new JFrame("Menu");
     JPanel menuPagePanel = new JPanel();
