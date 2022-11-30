@@ -2,13 +2,38 @@ package apeiron;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;  
 
 
 
-public class MenuPage extends Values {
+
+public class MenuPage extends Values{
 
     JFrame menuPageWindow = new JFrame("Menu");
     JPanel menuPagePanel = new JPanel();
+    
+    // for sidePanel (Had to make them global variables so that filter and
+    // unfilter methods could access these variables.
+    
+    JLabel peripherals = new JLabel("PERIPHERALS");
+    JLabel filterPeripherals = new JLabel(" FILTER BY PERiPHERALS");
+    JCheckBox keyboard = new JCheckBox ("KEYBOARD");
+    JCheckBox webcam = new JCheckBox("WEBCAM");
+    JCheckBox chassis = new JCheckBox("CHASSIS");
+    JCheckBox monitor = new JCheckBox("MONITOR");
+    JCheckBox mouse = new JCheckBox("MOUSE");
+    JLabel components = new JLabel("COMPONENTS");
+    JLabel filterComponents = new JLabel(" FILTER BY COMPONENTS");
+    JCheckBox cpu = new JCheckBox("CPU");
+    JCheckBox gpu = new JCheckBox("GPU");
+    JCheckBox ram = new JCheckBox("RAM");
+    JCheckBox storage = new JCheckBox("STORAGE");
+    JCheckBox mobo = new JCheckBox("MOTHERBOARD");
+    JButton filter = new JButton("                                     FILTER                                ");
+    JButton unfilter = new JButton("                                  UNFILTER                               ");
+    // I'm sorry for using such a crude solution to center the buttons HAHAHAHAHAHAAHA  
+        JButton cart = new JButton("                                      CART                                   ");
+       
     
     
     public MenuPage() {
@@ -83,7 +108,6 @@ public class MenuPage extends Values {
     }
 
     private void filterPanelSetup() {
-        
         JPanel filterPanel = new JPanel();
         BoxLayout boxLayout = new BoxLayout(filterPanel,BoxLayout.Y_AXIS); // Box Layout
         filterPanel.setOpaque(false); // temp gray background cuz idk how to fix this
@@ -92,25 +116,10 @@ public class MenuPage extends Values {
         filterPanel.setPreferredSize(new Dimension(280, 1000));
         menuPagePanel.add(filterPanel, BorderLayout.EAST);
         
-        JLabel peripherals = new JLabel("PERIPHERALS");
-        JLabel filterPeripherals = new JLabel(" FILTER BY PERiPHERALS");
-        JCheckBox keyboard = new JCheckBox ("KEYBOARD");
-        JCheckBox webcam = new JCheckBox("WEBCAM");
-        JCheckBox chassis = new JCheckBox("CHASSIS");
-        JCheckBox monitor = new JCheckBox("MONITOR");
-        JCheckBox mouse = new JCheckBox("MOUSE");
-        JLabel components = new JLabel("COMPONENTS");
-        JLabel filterComponents = new JLabel(" FILTER BY COMPONENTS");
-        JCheckBox cpu = new JCheckBox("CPU");
-        JCheckBox gpu = new JCheckBox("GPU");
-        JCheckBox ram = new JCheckBox("RAM");
-        JCheckBox storage = new JCheckBox("STORAGE");
-        JCheckBox mobo = new JCheckBox("MOTHERBOARD");
-        JButton filter = new JButton("                                     FILTER                                "); 
-        JButton unfilter = new JButton("                                  UNFILTER                               "); 
-        // I'm sorry for using such a crude solution to center the buttons HAHAHAHAHAHAAHA  
-        JButton cart = new JButton("                                      CART                                   ");
-       
+        
+        filter.addActionListener((e) -> { filterButton();});
+        unfilter.addActionListener((e) -> { unfilterButton();});
+        
         // SMALL DIVIDER
         ImageIcon dividerOneImg = new ImageIcon(resourcesFolder + "\\divider.png");
         dividerOneImg = imageIconResize(dividerOneImg, 2000, 10);
@@ -139,7 +148,6 @@ public class MenuPage extends Values {
         webcam.setBounds(0,0,0,0);
         webcam.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         webcam.setFont(smallFontPlain);
-        
         
         // CHASSIS (MEDIUM, CHECKBOX)
         chassis.setOpaque(false);
@@ -201,7 +209,7 @@ public class MenuPage extends Values {
         // FILTER (JBUTTON) this isn't doing anything for some reason...
         filter.setOpaque(false);
         filter.setSize(50,50);
-        
+
         // UNFILTER (JBUTTON) this one too....
         unfilter.setOpaque(false);
         unfilter.setSize(50,50);
@@ -234,4 +242,51 @@ public class MenuPage extends Values {
         filterPanel.add(cart);
         
     }
+
+    private void filterButton(){
+        if (keyboard.isSelected()){
+            System.out.println("Keyboard Selected.\n");
+        }
+        if (webcam.isSelected()){
+            System.out.println("Webcam Selected.\n");
+        }
+        if (chassis.isSelected()){
+            System.out.println("Chassis Selected.\n");
+        }
+        if (monitor.isSelected()){
+            System.out.println("Monitor Selected.\n");
+        }
+        if (mouse.isSelected()){
+            System.out.println("Mouse Selected.\n");
+        }
+        if (cpu.isSelected()){
+            System.out.println("CPU Selected.\n");
+        }
+        if (gpu.isSelected()){
+            System.out.println("GPU Selected.\n");
+        }
+        if (ram.isSelected()){
+            System.out.println("RAM Selected.\n");
+        }
+        if (storage.isSelected()){
+            System.out.println("Storage Selected.\n");
+        }
+        if (mobo.isSelected()){
+            System.out.println("Motherboard Selected.\n");
+        }
+    }
+    
+    private void unfilterButton(){
+        keyboard.setSelected(false);
+        webcam.setSelected(false);
+        chassis.setSelected(false);
+        monitor.setSelected(false);
+        mouse.setSelected(false);
+        cpu.setSelected(false);
+        gpu.setSelected(false);
+        ram.setSelected(false);
+        storage.setSelected(false);
+        mobo.setSelected(false);
+    }
+    
 }
