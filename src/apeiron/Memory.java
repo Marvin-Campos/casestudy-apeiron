@@ -1,7 +1,10 @@
 
 package apeiron;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Memory extends Component {
     private int memoryCapacity;
@@ -13,6 +16,20 @@ public class Memory extends Component {
         this.memoryCapacity = memoryCapacity;
         this.dataRate = dataRate;
         this.ramSpeed = ramSpeed;
+    }
+    
+    @Override
+    public JPanel getDesc() {
+        JPanel descPanel = new JPanel();
+        descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
+        
+        JLabel text1 = new JLabel("Capacity: " + memoryCapacity + "GB " + dataRate);
+        JLabel text2 = new JLabel("RAM Speed: " + ramSpeed + "MHz");
+        
+        descPanel.add(text1);
+        descPanel.add(text2);
+        
+        return descPanel;
     }
     
     
