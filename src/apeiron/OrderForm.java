@@ -3,39 +3,39 @@ package apeiron;
 import java.awt.*;
 import javax.swing.*;
 
-public class Cart extends Values {
+public class OrderForm extends Values {
 
-    JFrame cartWindow = new JFrame("Cart");
-    JPanel cartPanel = new JPanel();
+    JFrame orderFormWindow = new JFrame("Cart");
+    JPanel orderFormPanel = new JPanel();
     
     PC_Parts[] items;
 
-    public Cart() {
+    public OrderForm() {
         run();
     }
     
-    public Cart(PC_Parts[] items) {
+    public OrderForm(PC_Parts[] items) {
         this.items = items;
         run();
     }
 
     private void run() {
-        cartWindow.setSize(windowSize);
-        cartWindow.setIconImage(apeironIcon.getImage());
-        cartWindow.setResizable(false);
-        cartWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        orderFormWindow.setSize(windowSize);
+        orderFormWindow.setIconImage(apeironIcon.getImage());
+        orderFormWindow.setResizable(false);
+        orderFormWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        cartPanel.setLayout(new BoxLayout(cartPanel, BoxLayout.PAGE_AXIS));
-        cartPanel.setBorder(BorderFactory.createLineBorder(colorTest, 20));
-        cartPanel.setBorder(BorderFactory.createMatteBorder(0, 20, 20, 20, colorTest));
-        cartWindow.add(cartPanel);
+        orderFormPanel.setLayout(new BoxLayout(orderFormPanel, BoxLayout.PAGE_AXIS));
+        orderFormPanel.setBorder(BorderFactory.createLineBorder(colorTest, 20));
+        orderFormPanel.setBorder(BorderFactory.createMatteBorder(0, 20, 20, 20, colorTest));
+        orderFormWindow.add(orderFormPanel);
 
-        cartPanelSetup();
+        orderFormPanelSetup();
 
-        cartWindow.setVisible(true);
+        orderFormWindow.setVisible(true);
     }
 
-    private void cartPanelSetup() {
+    private void orderFormPanelSetup() {
         JLabel orderFormText = textSetup("CART", mediumFontBold);
         JLabel orderFormSubtext = textSetup("CONFIRM YOUR BASKET", smallFontPlain);
 
@@ -47,10 +47,10 @@ public class Cart extends Values {
         
 //        JScrollPane cartItemsPanel = cartItemsPanelSetup();
 
-        cartPanel.add(orderFormText);
-        cartPanel.add(orderFormSubtext);
-        cartPanel.add(apeironTextPanel);
-        cartPanel.add(itemAttributeGrid);
+        orderFormPanel.add(orderFormText);
+        orderFormPanel.add(orderFormSubtext);
+        orderFormPanel.add(apeironTextPanel);
+        orderFormPanel.add(itemAttributeGrid);
     }
     
     private JPanel itemAttributeGrid() {

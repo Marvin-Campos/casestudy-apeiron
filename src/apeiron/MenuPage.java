@@ -143,12 +143,9 @@ public class MenuPage extends Values{
 
         JLabel titleText = textSetup("APEIRON", mediumFontBold);
 
-        JLabel itemFilterText = textSetup("ALL ITEMS BY CATEGORY", smallFontBold);
-
         JScrollPane itemGridPanel = itemGridPanelSetup_Real(items);
 
         itemPanel.add(titleText);
-        itemPanel.add(itemFilterText);
         itemPanel.add(itemGridPanel);
         
         itemPanel.revalidate();
@@ -352,7 +349,7 @@ public class MenuPage extends Values{
         cart.setSize(50,50);
         cart.addActionListener((e) -> {
             menuPageWindow.dispose();
-            new Cart();
+            new OrderForm();
         });
 
         // Implementation; sorry for long-ass code idk how to optimize this yet.
