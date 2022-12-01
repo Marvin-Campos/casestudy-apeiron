@@ -1,7 +1,10 @@
 
 package apeiron;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Motherboard extends Component {
     private String socketType;
@@ -14,6 +17,24 @@ public class Motherboard extends Component {
         this.motherboardSize = motherboardSize;
         this.hasWifiConnectivity = hasWifiConnectivity;
     }
-    
+
+    @Override
+    public JPanel getDesc() {
+        JPanel descPanel = new JPanel();
+        descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
+        
+        JLabel text1 = new JLabel("Socket Type:  " + socketType);
+        JLabel text2 = new JLabel("MotherBoard Size: " + motherboardSize);
+        if (hasWifiConnectivity == true) {
+            JLabel text3 = new JLabel("Has In-built WiFi");
+            descPanel.add(text3);
+        }
+        
+        descPanel.add(text1);
+        descPanel.add(text2);
+        
+        return descPanel;
+    }
+        
     
 }

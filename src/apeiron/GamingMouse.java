@@ -1,7 +1,10 @@
 
 package apeiron;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class GamingMouse extends Mouse {
     private int weight;
@@ -13,5 +16,24 @@ public class GamingMouse extends Mouse {
         this.hasDPISwitch = hasDPISwitch;
     }
     
+    @Override
+    public JPanel getDesc() {
+        JPanel descPanel = new JPanel();
+        descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
+        
+        JLabel text1 = new JLabel("Weight: " + weight + "g");
+        JLabel text2 = new JLabel("DPI Switch: " + hasDPISwitch);
+        JLabel text3 = new JLabel("DPI: " + dpi);
+        JLabel text4 = new JLabel("No. of Buttons: " + numberOfButtons);
+        
+        
+        descPanel.add(text1);
+        descPanel.add(text2);
+        descPanel.add(text3);
+        descPanel.add(text4);
+        
+        
+        return descPanel;
+    }
     
 }
