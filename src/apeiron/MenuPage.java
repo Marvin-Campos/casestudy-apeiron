@@ -18,7 +18,11 @@ public class MenuPage extends Values{
     Graphics gpu2 = new Graphics(2, 3, 8, true, true, "Maangas na GPU", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\marvs.png"));
     
     Keyboard kb1 = new Keyboard(100, 84, "white", true, "Keyboard", 3000, "6789", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-    PC_Parts[] items = {processor1, processor2, processor3, processor4, processor5, kb1, gpu1, gpu2};
+    PC_Parts[] items = {processor1, processor2, processor3, processor4, processor5, 
+        kb1, gpu1, gpu2};
+    
+    Vector<PC_Parts> filteredItems = new Vector<PC_Parts>();
+    Vector<PC_Parts> selectedItems = new Vector<PC_Parts>();
   
     JFrame menuPageWindow = new JFrame("Menu");
     JPanel menuPagePanel = new JPanel();
@@ -105,6 +109,7 @@ public class MenuPage extends Values{
                 item.setLayout(new BoxLayout(item, BoxLayout.PAGE_AXIS));
 
                 JButton itemImageButton = new JButton(imageIconResize(apeironIcon, 100, 100));
+                
                 JLabel itemCounterLabel = new JLabel("Item " + itemCounter);
 
                 item.add(itemImageButton);
@@ -120,7 +125,7 @@ public class MenuPage extends Values{
     }
 
     
-
+    
     private JScrollPane itemGridPanelSetup_Real(PC_Parts[] items) {
 
         JPanel itemGrid = new JPanel(new GridBagLayout());
@@ -136,7 +141,17 @@ public class MenuPage extends Values{
             JPanel itemPanel = new JPanel();
             itemPanel.setLayout(new BoxLayout(itemPanel, BoxLayout.PAGE_AXIS));
 
-            JButton itemImageButton = new JButton(imageIconResize(item.getImage(), 100, 100));
+            JToggleButton itemImageButton = new JToggleButton(imageIconResize(item.getImage(), 100, 100));
+            itemImageButton.addActionListener((e) -> {
+                if(itemImageButton.isSelected()) {
+                    selectedItems.add(item);
+                } else { selectedItems.remove(item); }
+                
+                for (PC_Parts selectedItem : selectedItems) {
+                    System.out.print(selectedItem.getName() + ", ");
+                }
+                System.out.println("");
+            });
 
             JLabel itemName = new JLabel(item.getName());
             itemName.setFont(mediumFontBold);
@@ -272,6 +287,10 @@ public class MenuPage extends Values{
         // CART (JBUTTON) and this one....
         cart.setOpaque(false);
         cart.setSize(50,50);
+        cart.addActionListener((e) -> {
+            menuPageWindow.dispose();
+            new Cart();
+        });
 
         // Implementation; sorry for long-ass code idk how to optimize this yet.
         
@@ -296,8 +315,6 @@ public class MenuPage extends Values{
         filterPanel.add(cart);
         
     }
-
-    Vector<PC_Parts> filteredItems = new Vector<PC_Parts>();
     
     //THIS FUNCTION IS SLOW. MORE ITEMS = MORE SLOWER
     private void filterButton(){

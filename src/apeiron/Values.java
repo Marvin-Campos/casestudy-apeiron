@@ -5,6 +5,7 @@ import java.io.File;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Values {
     File resourcesFolder = new File(System.getProperty("user.dir") + "\\src\\resources");
@@ -49,6 +50,17 @@ public class Values {
         return textLabel;
     }
     
+     public JPanel textSetupWithPanel(String text, Font fontSize) {
+         JPanel panel = new JPanel();
+         
+        JLabel textLabel = new JLabel(text);
+        textLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        textLabel.setFont(fontSize);
+        
+        panel.add(textLabel);
+        
+        return panel;
+    }
     
     public ImageIcon imageIconResize(ImageIcon imageIcon, int width, int height) {
         Image image = imageIcon.getImage();
