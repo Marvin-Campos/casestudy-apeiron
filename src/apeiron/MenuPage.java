@@ -9,9 +9,8 @@ public class MenuPage extends Values {
 
     //Sample Items
     Processor processor1 = new Processor(2, 4, true, true, "Intel Core I9", 3000, "P1-091382", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-
     IntegratedGraphicsProcessor processor2 = new IntegratedGraphicsProcessor(3, 3, 6, 2, 4, true, true, "HexaCore PRO", 3600, "P2-739817", 1, new ImageIcon(resourcesFolder + "\\processor2.jfif"));
-    Processor processor3 = new Processor(999, 9999, true, true, "Superposition 301P", 72000, "P1-783191", 1, new ImageIcon(resourcesFolder + "\\processor3.jpg"));
+    Processor processor3 = new Processor(999, 9999, true, true, "Superposition 301P", 301000, "P1-783191", 1, new ImageIcon(resourcesFolder + "\\processor3.jpg"));
     IntegratedGraphicsProcessor processor4 = new IntegratedGraphicsProcessor(2, 4, 8, 2, 4, true, true, "Ligma Processor", 3100, "P2-948291", 1, new ImageIcon(resourcesFolder + "\\processor4.jpg"));
     Processor processor5 = new Processor(2, 4, true, true, "Apeiron Premium", 5000, "P1-298121", 1, new ImageIcon(resourcesFolder + "\\processor5.jpg"));
 
@@ -82,7 +81,6 @@ public class MenuPage extends Values {
         storage1, storage2, storage3, storage4, storage5
     };
 
-    // i feel like a real proggrammer would have a stroke reading this.
     Vector<PC_Parts> filteredItems = new Vector<PC_Parts>();
     Vector<PC_Parts> selectedItems = new Vector<PC_Parts>();
 
@@ -90,8 +88,6 @@ public class MenuPage extends Values {
     JPanel menuPagePanel = new JPanel();
     JPanel itemPanel = new JPanel();
 
-    // for sidePanel (Had to make them global variables so that filter and
-    // unfilter methods could access these variables.
     JLabel peripherals = new JLabel("PERIPHERALS");
     JLabel filterPeripherals = new JLabel(" FILTER BY PERiPHERALS");
     JCheckBox keyboard = new JCheckBox("KEYBOARD");
@@ -151,38 +147,6 @@ public class MenuPage extends Values {
         itemPanel.repaint();
     }
 
-    //Populate itemgridpanel with items
-    private JScrollPane itemGridPanelSetup_Populate() {
-        JPanel itemGrid = new JPanel(new GridBagLayout());
-        JScrollPane itemGridPanel = new JScrollPane(itemGrid, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(20, 20, 20, 20);
-
-        int itemCounter = 1;
-        for (int i = 1; i <= 30; i++) { //i = number of rows       
-            for (int j = 1; j <= 3; j++) { //j = number of columns
-
-                JPanel item = new JPanel();
-                item.setLayout(new BoxLayout(item, BoxLayout.PAGE_AXIS));
-
-                JButton itemImageButton = new JButton(imageIconResize(apeironIcon, 100, 100));
-
-                JLabel itemCounterLabel = new JLabel("Item " + itemCounter);
-
-                item.add(itemImageButton);
-                item.add(itemCounterLabel);
-                itemCounter++;
-
-                gbc.gridx = j;
-                gbc.gridy = i;
-                itemGrid.add(item, gbc);
-            }
-        }
-        return itemGridPanel;
-    }
-
     //THIS FUNCTION IS SO SLOWWWWWWWWWWW
     private JScrollPane itemGridPanelSetup_Real(PC_Parts[] items) {
 
@@ -206,11 +170,6 @@ public class MenuPage extends Values {
                 } else {
                     selectedItems.remove(item);
                 }
-
-//                for (PC_Parts selectedItem : selectedItems) {
-//                    System.out.print(selectedItem.getName() + ", ");
-//                }
-//                System.out.println("");
             });
 
             for (PC_Parts selectedItem : selectedItems) {
@@ -244,22 +203,6 @@ public class MenuPage extends Values {
 
     }
 
-//    private JScrollPane itemGridPanelSetup_Table(PC_Parts[] items) {
-//
-//        ImageIcon[][] data = new ImageIcon[items.length][1];
-//
-//        int i = 0;
-//        for (PC_Parts item : items) {
-//            data[i][0] = item.getImage();
-//
-//            i++;
-//        }
-//        String[] column = {"Image"};
-//        JTable table = new JTable(data, column);
-//        JScrollPane itemGridPanel = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-//        return itemGridPanel;
-//
-//    }
     private void filterPanelSetup() {
         JPanel filterPanel = new JPanel();
 
@@ -382,11 +325,11 @@ public class MenuPage extends Values {
         mobo.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         mobo.setFont(smallFontPlain);
 
-        // FILTER (JBUTTON) this isn't doing anything for some reason...
+        // FILTER (JBUTTON) 
         filter.setOpaque(false);
         filter.setSize(50, 50);
 
-        // UNFILTER (JBUTTON) this one too....
+        // UNFILTER (JBUTTON)
         unfilter.setOpaque(false);
 
         unfilter.setSize(50, 50);
@@ -394,14 +337,13 @@ public class MenuPage extends Values {
 
         unfilter.setSize(50, 50);
 
-        // CART (JBUTTON) and this one....
+        // CART (JBUTTON)
         checkOut.setOpaque(false);
         checkOut.setSize(50, 50);
         checkOut.addActionListener((e) -> {
             checkOutButton();
         });
 
-        // Implementation; sorry for long-ass code idk how to optimize this yet.
         filterPanel.add(peripherals);
         filterPanel.add(filterPeripherals);
         filterPanel.add(keyboard);
@@ -431,10 +373,6 @@ public class MenuPage extends Values {
         middlePanel.add(selectedItemsButton);
         middlePanel.add(checkOut);
 
-        // buttonPanel.add(filter);
-        // buttonPanel.add(unfilter);
-        // filterPanel.add(selectedItemsButton);
-        // filterPanel.add(checkOut);
     }
 
     //THIS FUNCTION IS SLOW. MORE ITEMS = MORE SLOWER
