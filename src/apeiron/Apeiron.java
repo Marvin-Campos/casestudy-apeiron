@@ -15,9 +15,8 @@ public class Apeiron {
 TODOS
 - change stocks to quantity
 - do menu page
-    - fix filter unfilter layout
-    - item code should be different for each items
-    - menu too slow XDDD    
+    - menu too slow XDDD
+    - price
 - do order form
     - in getDesc assign a value to description from the super class
  */
