@@ -16,7 +16,6 @@ TODOS
 - change stocks to quantity
 - do menu page
     - menu too slow XDDD
-    - price
 - do order form
     - in getDesc assign a value to description from the super class
  */
