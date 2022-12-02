@@ -24,6 +24,16 @@ public class Motherboard extends Component {
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
         descPanel.add(price);
+        if (isOverclockable==true) {
+        JLabel oc = new JLabel("Can be overclocked.");
+        descPanel.add(oc);
+        }
+        
+        if (hasRGB==true) {
+        JLabel oc = new JLabel("Has RGB Lighting.");
+        descPanel.add(oc);
+        }
+        
         JLabel text1 = new JLabel("Socket Type:  " + socketType);
         JLabel text2 = new JLabel("MotherBoard Size: " + motherboardSize);
         if (hasWifiConnectivity == true) {

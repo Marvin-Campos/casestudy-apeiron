@@ -23,6 +23,16 @@ public class IntegratedGraphicsProcessor extends Processor {
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
         descPanel.add(price);
+        if (isOverclockable==true) {
+        JLabel oc = new JLabel("Can be overclocked.");
+        descPanel.add(oc);
+        }
+        
+        if (hasRGB==true) {
+        JLabel oc = new JLabel("Has RGB Lighting.");
+        descPanel.add(oc);
+        }
+        
         JLabel text1 = new JLabel("Base Clock Speed: " + baseClockSpeed + "GHz");
         JLabel text2 = new JLabel("Max Clock Speed: " + maxClockSpeed + "GHz");
         JLabel text3 = new JLabel("Int. Core Count: " + integratedCoreCount + "GHz");

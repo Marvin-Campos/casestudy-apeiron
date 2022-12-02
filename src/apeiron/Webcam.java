@@ -22,7 +22,14 @@ public class Webcam extends Peripheral {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
-        descPanel.add(price);
+        descPanel.add(price);        
+        JLabel colored = new JLabel("Color: " + color);
+        descPanel.add(colored);
+        
+        if (isWireless==true) {
+            JLabel wireless = new JLabel("Is a Wireless Device.");
+            descPanel.add(wireless);
+        }
         JLabel text1 = new JLabel("Resolution:  " + resolution);
         JLabel text2 = new JLabel("Aspect Ratio: " + aspectRatio);
         

@@ -23,7 +23,18 @@ public class Memory extends Component {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
+       
         descPanel.add(price);
+        if (isOverclockable==true) {
+        JLabel oc = new JLabel("Can be overclocked.");
+        descPanel.add(oc);
+        }
+        
+        if (hasRGB==true) {
+        JLabel oc = new JLabel("Has RGB Lighting.");
+        descPanel.add(oc);
+        }
+        
         JLabel text1 = new JLabel("Capacity: " + memoryCapacity + "GB " + dataRate);
         JLabel text2 = new JLabel("RAM Speed: " + ramSpeed + "MHz");
         

@@ -28,6 +28,14 @@ public class Chassis extends Peripheral {
         JLabel price = new JLabel("Price: PHP " + prize);
         descPanel.add(price);
         
+        JLabel colored = new JLabel("Color: " + color);
+        descPanel.add(colored);
+        
+        if (isWireless==true) {
+            JLabel wireless = new JLabel("Is a Wireless Device.");
+            descPanel.add(wireless);
+        }
+        
         
         JLabel text1 = new JLabel("Size Factor: " + chassisSize);
         if (hasGlassSidePane == true) {

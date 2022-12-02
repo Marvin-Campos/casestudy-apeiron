@@ -24,6 +24,17 @@ public class Graphics extends Component{
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
         descPanel.add(price);
+        
+        if (isOverclockable==true) {
+        JLabel oc = new JLabel("Can be overclocked.");
+        descPanel.add(oc);
+        }
+        
+        if (hasRGB==true) {
+        JLabel oc = new JLabel("Has RGB Lighting.");
+        descPanel.add(oc);
+        }
+        
         JLabel text1 = new JLabel("Core Count: " + coreCount);
         JLabel text2 = new JLabel("Clock Speed: " + coreClockSpeed);
         JLabel text3 = new JLabel("VRAM: " + memorySize);

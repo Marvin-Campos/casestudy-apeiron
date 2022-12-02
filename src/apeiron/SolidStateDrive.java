@@ -22,6 +22,16 @@ public class SolidStateDrive extends Storage {
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
         descPanel.add(price);
+        if (isOverclockable==true) {
+        JLabel oc = new JLabel("Can be overclocked.");
+        descPanel.add(oc);
+        }
+        
+        if (hasRGB==true) {
+        JLabel oc = new JLabel("Has RGB Lighting.");
+        descPanel.add(oc);
+        }
+        
         JLabel text3 = new JLabel ("Capacity: " + storageCapacity + "GB");
         JLabel text1 = new JLabel("Form Factor:  " + formFactor); // This is M.2, 2.5 inch or nVME
         JLabel text2 = new JLabel("Interface: " + interface_); // This is PCIE x16 or SATA
