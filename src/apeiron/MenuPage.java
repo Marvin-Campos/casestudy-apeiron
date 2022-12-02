@@ -493,8 +493,15 @@ public class MenuPage extends Values {
             JOptionPane.showMessageDialog(null, "Please select an item.", "Empty Cart", 1);
             return;
         }
-        menuPageWindow.dispose();
-        PC_Parts[] arraySelectedItems = selectedItems.toArray(new PC_Parts[selectedItems.size()]);
-        new OrderForm(arraySelectedItems);
+        
+        int reply = JOptionPane.showConfirmDialog(null, "Do you want to proceed to checkout?", "Please confirm your items.", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            menuPageWindow.dispose();
+            PC_Parts[] arraySelectedItems = selectedItems.toArray(new PC_Parts[selectedItems.size()]);
+            new OrderForm(arraySelectedItems);
+        } else {
+            return;
+        }
+
     }
 }
