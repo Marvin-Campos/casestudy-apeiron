@@ -21,7 +21,14 @@ public class GamingMouse extends Mouse {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
-        descPanel.add(price);
+        descPanel.add(price);        
+        JLabel colored = new JLabel("Color: " + color);
+        descPanel.add(colored);
+        
+        if (isWireless==true) {
+            JLabel wireless = new JLabel("Is a Wireless Device.");
+            descPanel.add(wireless);
+        }
         JLabel text1 = new JLabel("Weight: " + weight + "g");
         JLabel text2 = new JLabel("DPI Switch: " + hasDPISwitch);
         JLabel text3 = new JLabel("DPI: " + dpi);
