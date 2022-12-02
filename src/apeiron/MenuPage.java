@@ -459,9 +459,6 @@ public class MenuPage extends Values {
             }
         }
 
-//        for(PC_Parts filteredItem : filteredItems) {
-//            System.out.println(filteredItem.getName());
-//        }
         if (filteredItems.isEmpty()) {
             unfilterButton();
             return;
