@@ -8,65 +8,65 @@ import java.util.Vector;
 public class MenuPage extends Values {
 
     //Sample Items
-    Processor processor1 = new Processor(2, 4, true, true, "Intel Core I9", 3000, "P1-091382", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
+    Processor processor1 = new Processor(2, 4, false, true, "Intel Core I9", 3000, "P1-091382", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     IntegratedGraphicsProcessor processor2 = new IntegratedGraphicsProcessor(3, 3, 6, 2, 4, true, true, "HexaCore PRO", 3600, "P2-739817", 1, new ImageIcon(resourcesFolder + "\\processor2.jfif"));
-    Processor processor3 = new Processor(999, 9999, true, true, "Superposition 301P", 7200, "P1-783191", 1, new ImageIcon(resourcesFolder + "\\processor3.jpg"));
+    Processor processor3 = new Processor(999, 9999, true, true, "Superposition 301P", 720000, "P1-783191", 1, new ImageIcon(resourcesFolder + "\\processor3.jpg"));
     IntegratedGraphicsProcessor processor4 = new IntegratedGraphicsProcessor(2, 4, 8, 2, 4, true, true, "Ligma Processor", 3100, "P2-948291", 1, new ImageIcon(resourcesFolder + "\\processor4.jpg"));
-    Processor processor5 = new Processor(2, 4, true, true, "Apeiron Premium", 5000, "P1-298121", 1, new ImageIcon(resourcesFolder + "\\processor5.jpg"));
+    Processor processor5 = new Processor(6, 12, true, false, "Apeiron Premium", 5000, "P1-298121", 1, new ImageIcon(resourcesFolder + "\\processor5.jpg"));
 
-    Graphics gpu1 = new Graphics(2, 3, 8, true, true, "STX 3060", 31000, "G1-306071", 1, new ImageIcon(resourcesFolder + "\\gpu1.jpg"));
-    Graphics gpu2 = new Graphics(2, 3, 8, true, true, "LT 8931XT", 17000, "G1-472894", 1, new ImageIcon(resourcesFolder + "\\gpu2.jpg"));
-    Graphics gpu3 = new Graphics(2, 3, 8, true, true, "ZTX 1992", 26000, "G1-938183", 1, new ImageIcon(resourcesFolder + "\\gpu3.jpg"));
-    Graphics gpu4 = new Graphics(2, 3, 8, true, true, "PL 222ZT", 12000, "G1-534012", 1, new ImageIcon(resourcesFolder + "\\gpu4.jpg"));
-    Graphics gpu5 = new Graphics(2, 3, 8, true, true, "MRV 3045AU", 22000, "G1-391831", 1, new ImageIcon(resourcesFolder + "\\gpu5.jpg"));
+    Graphics gpu1 = new Graphics(4, 8, 16, true, true, "STX 3060", 31000, "G1-306071", 1, new ImageIcon(resourcesFolder + "\\gpu1.jpg"));
+    Graphics gpu2 = new Graphics(2, 4, 4, true, true, "LT 8931XT", 17000, "G1-472894", 1, new ImageIcon(resourcesFolder + "\\gpu2.jpg"));
+    Graphics gpu3 = new Graphics(2, 4, 8, true, true, "ZTX 1992", 26000, "G1-938183", 1, new ImageIcon(resourcesFolder + "\\gpu3.jpg"));
+    Graphics gpu4 = new Graphics(1, 2, 2, true, true, "PL 222ZT", 12000, "G1-534012", 1, new ImageIcon(resourcesFolder + "\\gpu4.jpg"));
+    Graphics gpu5 = new Graphics(2,4, 6, true, true, "MRV 3045AU", 22000, "G1-391831", 1, new ImageIcon(resourcesFolder + "\\gpu5.jpg"));
 
-    Webcam wc1 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech K301P", 1100, "W1-101400", 1, new ImageIcon(resourcesFolder + "\\webcam1.png"));
-    Webcam wc2 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech K301XT", 700, "W1-942424", 1, new ImageIcon(resourcesFolder + "\\webcam2.jpg"));
-    Webcam wc3 = new Webcam("1920x1080", "16:9", "Black", false, "AP-RON CLEAR", 900, "W1-994124", 1, new ImageIcon(resourcesFolder + "\\webcam3.jpg"));
-    Webcam wc4 = new Webcam("1920x1080", "16:9", "Black", false, "AP-RON BOXY", 800, "W1-993103", 1, new ImageIcon(resourcesFolder + "\\webcam4.jpg"));
+    Webcam wc1 = new Webcam("3840x2160", "16:9", "Black", false, "SP-Tech K301P", 1100, "W1-101400", 1, new ImageIcon(resourcesFolder + "\\webcam1.png"));
+    Webcam wc2 = new Webcam("1920x1080", "16:10", "Black", false, "SP-Tech K301XT", 700, "W1-942424", 1, new ImageIcon(resourcesFolder + "\\webcam2.jpg"));
+    Webcam wc3 = new Webcam("1280x720", "16:9", "Black", false, "AP-RON CLEAR", 900, "W1-994124", 1, new ImageIcon(resourcesFolder + "\\webcam3.jpg"));
+    Webcam wc4 = new Webcam("1600x900", "16:9", "Black", false, "AP-RON BOXY", 800, "W1-993103", 1, new ImageIcon(resourcesFolder + "\\webcam4.jpg"));
     Webcam wc5 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech KXXP", 750, "W1-993104", 1, new ImageIcon(resourcesFolder + "\\webcam5.jpg"));
 
     OfficeMouse m1 = new OfficeMouse("Ball", 1600, 3, "Black", false, "RT MX Quiet", 700, "M1-870000", 1, new ImageIcon(resourcesFolder + "\\officeMouse.jpg"));
-    GamingMouse m2 = new GamingMouse(130, false, 800, 5, "White", true, "Apeiron MOU5", 2800, "M2-694200", 1, new ImageIcon(resourcesFolder + "\\gamingMouse.jpg"));
-    OfficeMouse m3 = new OfficeMouse("Ball", 1600, 3, "Black", false, "RT MX OFFICE", 900, "M1-123456", 1, new ImageIcon(resourcesFolder + "\\officeMouse2.jpg"));
-    GamingMouse m4 = new GamingMouse(130, false, 800, 5, "White", true, "APR MOU4 MINI", 2500, "M2-390123", 1, new ImageIcon(resourcesFolder + "\\gamingMouse2.jpg"));
-    OfficeMouse m5 = new OfficeMouse("Ball", 1600, 3, "Black", false, "RT MINI ", 400, "M1-382932", 1, new ImageIcon(resourcesFolder + "\\officeMouse3.jpg"));
+    GamingMouse m2 = new GamingMouse(130, true, 800, 5, "White", true, "Apeiron MOU5", 2800, "M2-694200", 1, new ImageIcon(resourcesFolder + "\\gamingMouse.jpg"));
+    OfficeMouse m3 = new OfficeMouse("Laser", 1600, 3, "Green", true, "RT MX OFFICE", 900, "M1-123456", 1, new ImageIcon(resourcesFolder + "\\officeMouse2.jpg"));
+    GamingMouse m4 = new GamingMouse(146, false, 400, 6, "Green", true, "APR MOU4 MINI", 2500, "M2-390123", 1, new ImageIcon(resourcesFolder + "\\gamingMouse2.jpg"));
+    OfficeMouse m5 = new OfficeMouse("Optical", 1600, 3, "Rainbow", true, "RT MINI ", 400, "M1-382932", 1, new ImageIcon(resourcesFolder + "\\officeMouse3.jpg"));
 
     MechanicalKeyboard kb1 = new MechanicalKeyboard("MX Cherry Reds", "Japanese", 70, "Pink", true, "Sakura 3P1C", 4700, "K1-209522", 1, new ImageIcon(resourcesFolder + "\\mechkb1.jfif"));
     MembraneKeyboard kb2 = new MembraneKeyboard(true, true, 100, "Black", false, "Generica MK1000", 800, "K2-193433", 1, new ImageIcon(resourcesFolder + "\\memkb1.jpg"));
-    MechanicalKeyboard kb3 = new MechanicalKeyboard("MX Cherry Reds", "Japanese", 70, "Pink", true, "Taho P001x", 5700, "K1-275022", 1, new ImageIcon(resourcesFolder + "\\mechkb2.jpeg"));
-    MembraneKeyboard kb4 = new MembraneKeyboard(true, true, 100, "Black", false, "Castom XP3103", 1200, "K2-193323", 1, new ImageIcon(resourcesFolder + "\\memkb2.jpg"));
-    MechanicalKeyboard kb5 = new MechanicalKeyboard("MX Cherry Reds", "Japanese", 70, "Pink", true, "H3LLFIRE X", 6200, "K1-202542", 1, new ImageIcon(resourcesFolder + "\\mechkb3.jpg"));
+    MechanicalKeyboard kb3 = new MechanicalKeyboard("Oreo Silents", "Clear", 60, "Blue", true, "Taho P001x", 5700, "K1-275022", 1, new ImageIcon(resourcesFolder + "\\mechkb2.jpeg"));
+    MembraneKeyboard kb4 = new MembraneKeyboard(false, true, 80, "Black", false, "Castom XP3103", 1200, "K2-193323", 1, new ImageIcon(resourcesFolder + "\\memkb2.jpg"));
+    MechanicalKeyboard kb5 = new MechanicalKeyboard("Cherry Browns", "Sans-Serif", 70, "Red", true, "H3LLFIRE X", 6200, "K1-202542", 1, new ImageIcon(resourcesFolder + "\\mechkb3.jpg"));
 
     Monitor mon1 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "APR K13981", 14000, "M3-831942", 1, new ImageIcon(resourcesFolder + "\\monitor1.jpg"));
-    Monitor mon2 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "SP1 POS-1", 15500, "M3-821367", 1, new ImageIcon(resourcesFolder + "\\monitor2.jpg"));
-    Monitor mon3 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "301X 918733", 17600, "M3-875167", 1, new ImageIcon(resourcesFolder + "\\monitor3.jpg"));
-    Monitor mon4 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "LOL LEGEND", 7000, "M3-831127", 1, new ImageIcon(resourcesFolder + "\\monitor4.jpg"));
-    Monitor mon5 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "APR MONIX", 13000, "M3-843167", 1, new ImageIcon(resourcesFolder + "\\monitor5.jpg"));
+    Monitor mon2 = new Monitor(32, "3840x2160", 240, "IPS Panel", "Black", false, "SP1 POS-1", 25500, "M3-821367", 1, new ImageIcon(resourcesFolder + "\\monitor2.jpg"));
+    Monitor mon3 = new Monitor(24, "1920x1080", 75, "IPS Panel", "Black", true, "301X 918733", 7600, "M3-875167", 1, new ImageIcon(resourcesFolder + "\\monitor3.jpg"));
+    Monitor mon4 = new Monitor(24, "1920x1080", 165, "IPS Panel", "White", false, "LOL LEGEND", 7000, "M3-831127", 1, new ImageIcon(resourcesFolder + "\\monitor4.jpg"));
+    Monitor mon5 = new Monitor(24, "2560x1440", 144, "VA Panel", "Black", false, "APR MONIX", 13000, "M3-843167", 1, new ImageIcon(resourcesFolder + "\\monitor5.jpg"));
 
     Chassis ch1 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 6400, "C1-052538", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg"));
-    Chassis ch2 = new Chassis("ATX", true, false, 7, "White", false, "BIG CHUNGUS", 1200, "C1-057650", 1, new ImageIcon(resourcesFolder + "\\chassis2.jpg"));
-    Chassis ch3 = new Chassis("ATX", true, false, 7, "White", false, "SUS MACHINE", 3400, "C1-038520", 1, new ImageIcon(resourcesFolder + "\\chassis3.jpg"));
-    Chassis ch4 = new Chassis("ATX", true, false, 7, "White", false, "FROZEN XP13", 2200, "C1-052024", 1, new ImageIcon(resourcesFolder + "\\chassis4.jpg"));
-    Chassis ch5 = new Chassis("ATX", true, false, 7, "White", false, "POLAR ITYX", 7600, "C1-054520", 1, new ImageIcon(resourcesFolder + "\\chassis5.jpg"));
+    Chassis ch2 = new Chassis("mATX", true, true, 7, "Black", false, "BIG CHUNGUS", 1200, "C1-057650", 1, new ImageIcon(resourcesFolder + "\\chassis2.jpg"));
+    Chassis ch3 = new Chassis("ATX", true, false, 6, "Black", false, "SUS MACHINE", 3400, "C1-038520", 1, new ImageIcon(resourcesFolder + "\\chassis3.jpg"));
+    Chassis ch4 = new Chassis("ATX", true, true, 7, "White", false, "FROZEN XP13", 2200, "C1-052024", 1, new ImageIcon(resourcesFolder + "\\chassis4.jpg"));
+    Chassis ch5 = new Chassis("mATX", false, false, 5, "Black", false, "POLAR ITYX", 2600, "C1-054520", 1, new ImageIcon(resourcesFolder + "\\chassis5.jpg"));
 
-    Motherboard mobo1 = new Motherboard("AM4", "mATX", true, true, true, "AOSTEN Z560m", 12000, "M4-415000", 1, new ImageIcon(resourcesFolder + "\\mobo1.png"));
-    Motherboard mobo2 = new Motherboard("AM4", "mATX", true, true, true, "MORBIU BG11x", 7000, "M4-031973", 1, new ImageIcon(resourcesFolder + "\\mobo2.jpg"));
-    Motherboard mobo3 = new Motherboard("AM4", "mATX", true, true, true, "AOSTEN Y480m", 6900, "M4-058976", 1, new ImageIcon(resourcesFolder + "\\mobo3.jpg"));
-    Motherboard mobo4 = new Motherboard("AM4", "mATX", true, true, true, "MORBIU BG12x", 5000, "M4-147924", 1, new ImageIcon(resourcesFolder + "\\mobo4.png"));
-    Motherboard mobo5 = new Motherboard("AM4", "mATX", true, true, true, "AOSBIU 99XT", 8800, "M4-472740", 1, new ImageIcon(resourcesFolder + "\\mobo5.png"));
+    Motherboard mobo1 = new Motherboard("AM4", "mATX", false, true, true, "AOSTEN Z560m", 12000, "M4-415000", 1, new ImageIcon(resourcesFolder + "\\mobo1.png"));
+    Motherboard mobo2 = new Motherboard("LGA-1155", "ATX", true, true, false, "MORBIU BG11x", 7000, "M4-031973", 1, new ImageIcon(resourcesFolder + "\\mobo2.jpg"));
+    Motherboard mobo3 = new Motherboard("AM3", "ATX", true, false, true, "AOSTEN Y480m", 6900, "M4-058976", 1, new ImageIcon(resourcesFolder + "\\mobo3.jpg"));
+    Motherboard mobo4 = new Motherboard("LGA-1511", "mATX", false, false, true, "MORBIU BG12x", 5000, "M4-147924", 1, new ImageIcon(resourcesFolder + "\\mobo4.png"));
+    Motherboard mobo5 = new Motherboard("AM4", "iATX", true, false, false, "AOSBIU 99XT", 8800, "M4-472740", 1, new ImageIcon(resourcesFolder + "\\mobo5.png"));
 
-    Memory ram1 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "R1-197753", 1, new ImageIcon(resourcesFolder + "\\ram1.jpg"));
-    Memory ram2 = new Memory(8, "DDR5", 3200, false, true, "AustinY Ripper", 4400, "R1-152973", 1, new ImageIcon(resourcesFolder + "\\ram2.jpg"));
-    Memory ram3 = new Memory(8, "DDR5", 3200, false, true, "Corvette Revenge", 1000, "R1-197352", 1, new ImageIcon(resourcesFolder + "\\ram3.jfif"));
-    Memory ram4 = new Memory(8, "DDR5", 3200, false, true, "Lancer Spear", 3200, "R1-197843", 1, new ImageIcon(resourcesFolder + "\\ram4.jpg"));
-    Memory ram5 = new Memory(8, "DDR5", 3200, false, true, "Picka Choo", 1100, "R1-194273", 1, new ImageIcon(resourcesFolder + "\\ram5.jpg"));
+    Memory ram1 = new Memory(8, "DDR5", 3200, true, true, "MarvinX Fury", 2100, "R1-197753", 1, new ImageIcon(resourcesFolder + "\\ram1.jpg"));
+    Memory ram2 = new Memory(32, "DDR4", 3200, false, false, "AustinY Ripper", 4400, "R1-152973", 1, new ImageIcon(resourcesFolder + "\\ram2.jpg"));
+    Memory ram3 = new Memory(4, "DDR5", 3200, true, true, "Corvette Revenge", 1000, "R1-197352", 1, new ImageIcon(resourcesFolder + "\\ram3.jfif"));
+    Memory ram4 = new Memory(8, "DDR4", 3200, false, true, "Lancer Spear", 3200, "R1-197843", 1, new ImageIcon(resourcesFolder + "\\ram4.jpg"));
+    Memory ram5 = new Memory(16, "DDR4", 3200, false, true, "Picka Choo", 1100, "R1-194273", 1, new ImageIcon(resourcesFolder + "\\ram5.jpg"));
 
     SolidStateDrive storage1 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Ausvin 03301P", 6200, "S1-0335301", 1, new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
     HardDiskDrive storage2 = new HardDiskDrive(7200, 5000, false, false, "Ausvin 03301G", 1900, "S2-933961", 1, new ImageIcon(resourcesFolder + "\\hdd1.jpg"));
-    SolidStateDrive storage3 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Serra 41Large", 5800, "S1-0312301", 1, new ImageIcon(resourcesFolder + "\\ssd2.jpg"));
-    HardDiskDrive storage4 = new HardDiskDrive(7200, 5000, false, false, "Ausvin 03301G", 2000, "S2-XX9141", 1, new ImageIcon(resourcesFolder + "\\hdd2.jpg"));
-    SolidStateDrive storage5 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Camps 1948xT", 7000, "S1-0330131", 1, new ImageIcon(resourcesFolder + "\\ssd3.jpg"));
+    SolidStateDrive storage3 = new SolidStateDrive("2.5", "SATA", 2000, false, false, "Serra 41Large", 5800, "S1-0312301", 1, new ImageIcon(resourcesFolder + "\\ssd2.jpg"));
+    HardDiskDrive storage4 = new HardDiskDrive(6800, 7000, false, true, "Ausvin 03301G", 2000, "S2-XX9141", 1, new ImageIcon(resourcesFolder + "\\hdd2.jpg"));
+    SolidStateDrive storage5 = new SolidStateDrive("2.5", "SATA", 1000, false, true, "Camps 1948xT", 7000, "S1-0330131", 1, new ImageIcon(resourcesFolder + "\\ssd3.jpg"));
 
     PC_Parts[] items = {
         processor1, processor2, processor3, processor4, processor5,
