@@ -22,7 +22,8 @@ public class Graphics extends Component{
     public JPanel getDesc() {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
-        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
         JLabel text1 = new JLabel("Core Count: " + coreCount);
         JLabel text2 = new JLabel("Clock Speed: " + coreClockSpeed);
         JLabel text3 = new JLabel("VRAM: " + memorySize);

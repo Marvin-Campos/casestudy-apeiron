@@ -25,7 +25,8 @@ public class Monitor extends Peripheral {
     public JPanel getDesc() {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
-        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
         JLabel text1 = new JLabel("Resolution:  " + resolution);
         JLabel text2 = new JLabel("Size: " + sizeInInches + " inches");
         JLabel text3 = new JLabel("Refresh Rate:  " + refreshRate + "hz");

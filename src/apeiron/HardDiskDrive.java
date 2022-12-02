@@ -18,7 +18,8 @@ public class HardDiskDrive extends Storage {
     public JPanel getDesc() {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
-        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
         JLabel text1 = new JLabel ("Capacity: " + storageCapacity + "GB");
         JLabel text2 = new JLabel ("RPM: " + revolutionPerMinute + "RPM");
     

@@ -22,7 +22,8 @@ public class Motherboard extends Component {
     public JPanel getDesc() {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
-        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
         JLabel text1 = new JLabel("Socket Type:  " + socketType);
         JLabel text2 = new JLabel("MotherBoard Size: " + motherboardSize);
         if (hasWifiConnectivity == true) {

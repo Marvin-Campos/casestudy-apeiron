@@ -18,7 +18,8 @@ public class OfficeMouse extends Mouse {
     public JPanel getDesc() {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
-        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
         JLabel text1 = new JLabel("Sensor Type: " + sensorType);
         JLabel text2 = new JLabel("DPI: " + dpi);
         JLabel text3 = new JLabel("No. of Buttons: " + numberOfButtons);

@@ -10,7 +10,7 @@ public class MenuPage extends Values {
     //Sample Items
     Processor processor1 = new Processor(2, 4, true, true, "Intel Core I9", 3000, "P1-091382", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     IntegratedGraphicsProcessor processor2 = new IntegratedGraphicsProcessor(3, 3, 6, 2, 4, true, true, "AMD", 3600, "P2-739817", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-    Processor processor3 = new Processor(999, 9999, true, true, "Superposition 301P", 72000, "P1-783191", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
+    Processor processor3 = new Processor(999, 9999, true, true, "Superposition 301P", 7200, "P1-783191", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     IntegratedGraphicsProcessor processor4 = new IntegratedGraphicsProcessor(2, 4, 8, 2, 4, true, true, "Ligma Processor", 3100, "P2-948291", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor5 = new Processor(2, 4, true, true, "Apeiron Premium", 5000, "P1-298121", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
 

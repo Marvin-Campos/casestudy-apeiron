@@ -24,6 +24,11 @@ public class Chassis extends Peripheral {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         
+        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
+        
+        
         JLabel text1 = new JLabel("Size Factor: " + chassisSize);
         if (hasGlassSidePane == true) {
             JLabel text2 = new JLabel("Glass Side ");

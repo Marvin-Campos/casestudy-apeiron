@@ -20,7 +20,8 @@ public class MechanicalKeyboard extends Keyboard {
     public JPanel getDesc() {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
-        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
         JLabel text1 = new JLabel("Keyboard Size: " + keyboardSize + "%");
         JLabel text3 = new JLabel("Switch: " + switchType);
         JLabel text4 = new JLabel("Keycap Design: " + keyCapDesign);

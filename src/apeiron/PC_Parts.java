@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 public class PC_Parts {
 
     private String name;
-    private int prize;
+    protected int prize;
     private String description = "";
     private String itemCode;
     private int stocks; //attribute might not be use

@@ -21,7 +21,8 @@ public class IntegratedGraphicsProcessor extends Processor {
     public JPanel getDesc() {
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
-        
+        JLabel price = new JLabel("Price: PHP " + prize);
+        descPanel.add(price);
         JLabel text1 = new JLabel("Base Clock Speed: " + baseClockSpeed + "GHz");
         JLabel text2 = new JLabel("Max Clock Speed: " + maxClockSpeed + "GHz");
         JLabel text3 = new JLabel("Int. Core Count: " + integratedCoreCount + "GHz");
