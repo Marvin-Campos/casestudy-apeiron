@@ -49,54 +49,32 @@ public class OrderForm extends Values {
         orderFormPanel.add(apeironTextPanel);
         orderFormPanel.add(table);
     }
-
-    private JScrollPane cartTableSetup_Example() {
-        String data[][] = {{"101", "Amit", "670000"},
-        {"102", "Jai", "780000"},
-        {"101", "Sachin", "700000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},};
-        String column[] = {"ID", "NAME", "SALARY"};
-        JTable table = new JTable(data, column);
-        table.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
-        
-        JScrollPane sp = new JScrollPane(table);
-//        String[][] data;
-        
-//        int i = 0;
-//        for(PC_Parts item : items) {
-//            data[0][i] = 
-//        }
-
-        return sp;
-    }
     
      private JScrollPane cartTableSetup() {
-        String data[][] = {{"101", "Amit", "670000"},
-        {"102", "Jai", "780000"},
-        {"101", "Sachin", "700000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},
-        {"102", "Jai", "780000"},};
-        String column[] = {"ID", "NAME", "SALARY"};
+         System.out.println(items.length);
+         String[][] data = new String[items.length][3];
+         
+         int i = 0;
+         for (PC_Parts item : items) {
+             data[i][0] = item.getName();
+             data[i][1] = item.getItemCode();
+             data[i][2] = String.valueOf(item.getPrize());
+             
+             i++;
+         }
+         
+//         for (String[] d : data) {
+//             System.out.print(d[0] + ", ");
+//             System.out.print(d[1] + ", ");
+//             System.out.print(d[2]);
+//             System.out.println("");
+//         }
+        
+        String column[] = {"NAME", "ITEM CODE", "PRIZE"};
         JTable table = new JTable(data, column);
-        table.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
+//        table.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
         
         JScrollPane sp = new JScrollPane(table);
-//        String[][] data;
-        
-//        int i = 0;
-//        for(PC_Parts item : items) {
-//            data[0][i] = 
-//        }
-
         return sp;
     }
 
@@ -172,55 +150,4 @@ public class OrderForm extends Values {
         ram1, ram2, ram3, ram4, ram5,
         storage1, storage2, storage3, storage4, storage5
     };
-//    private JPanel itemAttributeGrid() {
-//        JPanel itemAttributeGridPanel = new JPanel();
-//        itemAttributeGridPanel.setLayout(new GridLayout(1, 5));
-////        itemAttributeGridPanel.setMaximumSize(new Dimension(200, 200));
-//        itemAttributeGridPanel.setBorder(BorderFactory.createMatteBorder(0, 5, 5, 5, Color.BLACK));
-//
-//        JPanel itemCodeText = textSetupWithPanel("ITEM CODE", mediumFontPlain);
-//
-//        JPanel quantityText = textSetupWithPanel("QUANTITY", mediumFontPlain);
-//        JPanel itemDescText = textSetupWithPanel("ITEM DESCRIPTION", mediumFontPlain);
-//        JPanel priceText = textSetupWithPanel("PRICE", mediumFontPlain);
-//        JPanel amountText = textSetupWithPanel("AMOUNT", mediumFontPlain);
-//
-//        itemAttributeGridPanel.add(itemCodeText);
-//        itemAttributeGridPanel.add(quantityText);
-//        itemAttributeGridPanel.add(itemDescText);
-//        itemAttributeGridPanel.add(priceText);
-//        itemAttributeGridPanel.add(amountText);
-//
-//        return itemAttributeGridPanel;
-//    }
-//    private JScrollPane cartTableSetup() {
-//        JPanel itemGrid = new JPanel(new GridBagLayout());
-//        JScrollPane itemGridPanel = new JScrollPane(itemGrid, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-//
-//        GridBagConstraints gbc = new GridBagConstraints();
-//        gbc.fill = GridBagConstraints.HORIZONTAL;
-//        gbc.insets = new Insets(20, 20, 20, 20);
-//
-//        int itemCounter = 1;
-//        for (int i = 1; i <= 30; i++) { //i = number of rows       
-//            for (int j = 1; j <= 3; j++) { //j = number of columns
-//
-//                JPanel item = new JPanel();
-//                item.setLayout(new BoxLayout(item, BoxLayout.PAGE_AXIS));
-//
-//                JButton itemImageButton = new JButton(imageIconResize(apeironIcon, 100, 100));
-//
-//                JLabel itemCounterLabel = new JLabel("Item " + itemCounter);
-//
-//                item.add(itemImageButton);
-//                item.add(itemCounterLabel);
-//                itemCounter++;
-//
-//                gbc.gridx = j;
-//                gbc.gridy = i;
-//                itemGrid.add(item, gbc);
-//            }
-//        }
-//        return itemGridPanel;
-//    }
 }

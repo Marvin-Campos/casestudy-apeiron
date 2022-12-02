@@ -25,6 +25,11 @@ public class PC_Parts {
         return name;
     }
 
+    public int getPrize() {
+        return prize;
+    }
+    
+
     public ImageIcon getImage() {
         return image;
     }

@@ -2,10 +2,10 @@ package apeiron;
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;  
+import java.awt.event.*;
 import java.util.Vector;
 
-public class MenuPage extends Values{
+public class MenuPage extends Values {
 
     //Sample Items
     Processor processor1 = new Processor(2, 4, true, true, "Intel Core I9", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
@@ -13,90 +13,87 @@ public class MenuPage extends Values{
     Processor processor3 = new Processor(2, 4, true, true, "SP 03-301P", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     IntegratedGraphicsProcessor processor4 = new IntegratedGraphicsProcessor(2, 4, 8, 2, 4, true, true, "Ligma Processor", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
     Processor processor5 = new Processor(2, 4, true, true, "Apeiron Premium", 3000, "12345", 1, new ImageIcon(resourcesFolder + "\\processor1.png"));
-    
+
     Graphics gpu1 = new Graphics(2, 3, 8, true, true, "RTX 3060", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\aust.png"));
     Graphics gpu2 = new Graphics(2, 3, 8, true, true, "Maangas na GPU", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\marvs.png"));
     Graphics gpu3 = new Graphics(2, 3, 8, true, true, "RTX 3060", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\aust.png"));
     Graphics gpu4 = new Graphics(2, 3, 8, true, true, "Maangas na GPU", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\marvs.png"));
     Graphics gpu5 = new Graphics(2, 3, 8, true, true, "RTX 3060", 27000, "B1-2000", 1, new ImageIcon(resourcesFolder + "\\aust.png"));
-    
+
     Webcam wc1 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech K301P", 4700, "XM-1014", 1, new ImageIcon(resourcesFolder + "\\webcam1.png"));
     Webcam wc2 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech K301P", 4700, "XM-1014", 1, new ImageIcon(resourcesFolder + "\\webcam1.png"));
     Webcam wc3 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech K301P", 4700, "XM-1014", 1, new ImageIcon(resourcesFolder + "\\webcam1.png"));
     Webcam wc4 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech K301P", 4700, "XM-1014", 1, new ImageIcon(resourcesFolder + "\\webcam1.png"));
     Webcam wc5 = new Webcam("1920x1080", "16:9", "Black", false, "SP-Tech K301P", 4700, "XM-1014", 1, new ImageIcon(resourcesFolder + "\\webcam1.png"));
-    
+
     OfficeMouse m1 = new OfficeMouse("Ball", 1600, 3, "Black", false, "RT MX Quiet", 700, "JB-87000", 1, new ImageIcon(resourcesFolder + "\\officeMouse.jpg"));
     GamingMouse m2 = new GamingMouse(130, false, 800, 5, "White", true, "Apeiron MOU5", 2800, "EY-69420", 1, new ImageIcon(resourcesFolder + "\\gamingMouse.jpg"));
     OfficeMouse m3 = new OfficeMouse("Ball", 1600, 3, "Black", false, "RT MX Quiet", 700, "JB-87000", 1, new ImageIcon(resourcesFolder + "\\officeMouse.jpg"));
     GamingMouse m4 = new GamingMouse(130, false, 800, 5, "White", true, "Apeiron MOU5", 2800, "EY-69420", 1, new ImageIcon(resourcesFolder + "\\gamingMouse.jpg"));
     OfficeMouse m5 = new OfficeMouse("Ball", 1600, 3, "Black", false, "RT MX Quiet", 700, "JB-87000", 1, new ImageIcon(resourcesFolder + "\\officeMouse.jpg"));
-    
+
     MechanicalKeyboard kb1 = new MechanicalKeyboard("MX Cherry Reds", "Japanese", 70, "Pink", true, "Sakura 3P1C", 4700, "JP-2022", 1, new ImageIcon(resourcesFolder + "\\mechkb1.jfif"));
     MembraneKeyboard kb2 = new MembraneKeyboard(true, true, 100, "Black", false, "Generica MK1000", 800, "KK-1933", 1, new ImageIcon(resourcesFolder + "\\memkb1.jpg"));
     MechanicalKeyboard kb3 = new MechanicalKeyboard("MX Cherry Reds", "Japanese", 70, "Pink", true, "Sakura 3P1C", 4700, "JP-2022", 1, new ImageIcon(resourcesFolder + "\\mechkb1.jfif"));
     MembraneKeyboard kb4 = new MembraneKeyboard(true, true, 100, "Black", false, "Generica MK1000", 800, "KK-1933", 1, new ImageIcon(resourcesFolder + "\\memkb1.jpg"));
     MechanicalKeyboard kb5 = new MechanicalKeyboard("MX Cherry Reds", "Japanese", 70, "Pink", true, "Sakura 3P1C", 4700, "JP-2022", 1, new ImageIcon(resourcesFolder + "\\mechkb1.jfif"));
-    
+
     Monitor mon1 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "APR K13981", 13000, "PR-83167", 1, new ImageIcon(resourcesFolder + "\\monitor1.jpg"));
     Monitor mon2 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "APR K13981", 13000, "PR-83167", 1, new ImageIcon(resourcesFolder + "\\monitor1.jpg"));
     Monitor mon3 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "APR K13981", 13000, "PR-83167", 1, new ImageIcon(resourcesFolder + "\\monitor1.jpg"));
     Monitor mon4 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "APR K13981", 13000, "PR-83167", 1, new ImageIcon(resourcesFolder + "\\monitor1.jpg"));
     Monitor mon5 = new Monitor(24, "1920x1080", 144, "VA Panel", "Red", false, "APR K13981", 13000, "PR-83167", 1, new ImageIcon(resourcesFolder + "\\monitor1.jpg"));
-    
-    Chassis ch1 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg") );
-    Chassis ch2 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg") );
-    Chassis ch3 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg") );
-    Chassis ch4 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg") );
-    Chassis ch5 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg") );
-    
+
+    Chassis ch1 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg"));
+    Chassis ch2 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg"));
+    Chassis ch3 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg"));
+    Chassis ch4 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg"));
+    Chassis ch5 = new Chassis("ATX", true, false, 7, "White", false, "ARCTIC 0N4", 3400, "GE-0520", 1, new ImageIcon(resourcesFolder + "\\chassis1.jpg"));
+
     Motherboard mobo1 = new Motherboard("AM4", "mATX", true, true, true, "AOSTEN Z560m", 12000, "JL-092003", 1, new ImageIcon(resourcesFolder + "\\mobo1.png"));
     Motherboard mobo2 = new Motherboard("AM4", "mATX", true, true, true, "AOSTEN Z560m", 12000, "JL-092003", 1, new ImageIcon(resourcesFolder + "\\mobo1.png"));
     Motherboard mobo3 = new Motherboard("AM4", "mATX", true, true, true, "AOSTEN Z560m", 12000, "JL-092003", 1, new ImageIcon(resourcesFolder + "\\mobo1.png"));
     Motherboard mobo4 = new Motherboard("AM4", "mATX", true, true, true, "AOSTEN Z560m", 12000, "JL-092003", 1, new ImageIcon(resourcesFolder + "\\mobo1.png"));
     Motherboard mobo5 = new Motherboard("AM4", "mATX", true, true, true, "AOSTEN Z560m", 12000, "JL-092003", 1, new ImageIcon(resourcesFolder + "\\mobo1.png"));
-    
-    Memory ram1 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif") );
-    Memory ram2 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif") );
-    Memory ram3 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif") );
-    Memory ram4 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif") );
-    Memory ram5 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif") );
-                    
-    
-    SolidStateDrive storage1 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Ausvin 03301P", 6000, "AM-03301", 1,new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
+
+    Memory ram1 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif"));
+    Memory ram2 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif"));
+    Memory ram3 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif"));
+    Memory ram4 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif"));
+    Memory ram5 = new Memory(8, "DDR5", 3200, false, true, "MarvinX Fury", 2100, "MV-1973", 1, new ImageIcon(resourcesFolder + "\\ram1.jfif"));
+
+    SolidStateDrive storage1 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Ausvin 03301P", 6000, "AM-03301", 1, new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
     HardDiskDrive storage2 = new HardDiskDrive(7200, 5000, false, false, "Ausvin 03301G", 2000, "BM-93391", 1, new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
-    SolidStateDrive storage3 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Ausvin 03301P", 6000, "AM-03301", 1,new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
+    SolidStateDrive storage3 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Ausvin 03301P", 6000, "AM-03301", 1, new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
     HardDiskDrive storage4 = new HardDiskDrive(7200, 5000, false, false, "Ausvin 03301G", 2000, "BM-93391", 1, new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
-    SolidStateDrive storage5 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Ausvin 03301P", 6000, "AM-03301", 1,new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
-    
+    SolidStateDrive storage5 = new SolidStateDrive("NVMe", "PCIE-16x", 1000, false, false, "Ausvin 03301P", 6000, "AM-03301", 1, new ImageIcon(resourcesFolder + "\\ssd1.jpg"));
+
     PC_Parts[] items = {
-        processor1, processor2, processor3, processor4, processor5, 
+        processor1, processor2, processor3, processor4, processor5,
         gpu1, gpu2, gpu3, gpu4, gpu5,
-        wc1, wc2, wc3, wc4, wc5, 
+        wc1, wc2, wc3, wc4, wc5,
         m1, m2, m3, m4, m5,
         kb1, kb2, kb3, kb4, kb5,
-        mon1, mon2, mon3, mon4, mon5, 
-        ch1, ch2, ch3, ch4, ch5, 
-        mobo1, mobo2, mobo3, mobo4, mobo5, 
-        ram1, ram2, ram3, ram4, ram5, 
+        mon1, mon2, mon3, mon4, mon5,
+        ch1, ch2, ch3, ch4, ch5,
+        mobo1, mobo2, mobo3, mobo4, mobo5,
+        ram1, ram2, ram3, ram4, ram5,
         storage1, storage2, storage3, storage4, storage5
     };
-    
+
     // i feel like a real proggrammer would have a stroke reading this.
-    
     Vector<PC_Parts> filteredItems = new Vector<PC_Parts>();
     Vector<PC_Parts> selectedItems = new Vector<PC_Parts>();
-  
+
     JFrame menuPageWindow = new JFrame("Menu");
     JPanel menuPagePanel = new JPanel();
     JPanel itemPanel = new JPanel();
-    
+
     // for sidePanel (Had to make them global variables so that filter and
     // unfilter methods could access these variables.
-    
     JLabel peripherals = new JLabel("PERIPHERALS");
     JLabel filterPeripherals = new JLabel(" FILTER BY PERiPHERALS");
-    JCheckBox keyboard = new JCheckBox ("KEYBOARD");
+    JCheckBox keyboard = new JCheckBox("KEYBOARD");
     JCheckBox webcam = new JCheckBox("WEBCAM");
     JCheckBox chassis = new JCheckBox("CHASSIS");
     JCheckBox monitor = new JCheckBox("MONITOR");
@@ -148,7 +145,7 @@ public class MenuPage extends Values{
 
         itemPanel.add(titleText);
         itemPanel.add(itemGridPanel);
-        
+
         itemPanel.revalidate();
         itemPanel.repaint();
     }
@@ -170,7 +167,7 @@ public class MenuPage extends Values{
                 item.setLayout(new BoxLayout(item, BoxLayout.PAGE_AXIS));
 
                 JButton itemImageButton = new JButton(imageIconResize(apeironIcon, 100, 100));
-                
+
                 JLabel itemCounterLabel = new JLabel("Item " + itemCounter);
 
                 item.add(itemImageButton);
@@ -185,8 +182,7 @@ public class MenuPage extends Values{
         return itemGridPanel;
     }
 
-    
-    
+    //THIS FUNCTION IS SO SLOWWWWWWWWWWW
     private JScrollPane itemGridPanelSetup_Real(PC_Parts[] items) {
 
         JPanel itemGrid = new JPanel(new GridBagLayout());
@@ -204,18 +200,20 @@ public class MenuPage extends Values{
 
             JToggleButton itemImageButton = new JToggleButton(imageIconResize(item.getImage(), 100, 100));
             itemImageButton.addActionListener((e) -> {
-                if(itemImageButton.isSelected()) {
+                if (itemImageButton.isSelected()) {
                     selectedItems.add(item);
-                } else { selectedItems.remove(item); }
-                
+                } else {
+                    selectedItems.remove(item);
+                }
+
                 for (PC_Parts selectedItem : selectedItems) {
                     System.out.print(selectedItem.getName() + ", ");
                 }
                 System.out.println("");
             });
-            
+
             for (PC_Parts selectedItem : selectedItems) {
-                if(item.getItemCode() == selectedItem.getItemCode()) {
+                if (item.getItemCode() == selectedItem.getItemCode()) {
                     itemImageButton.setSelected(true);
                 }
             }
@@ -245,123 +243,144 @@ public class MenuPage extends Values{
 
     }
 
+//    private JScrollPane itemGridPanelSetup_Table(PC_Parts[] items) {
+//
+//        ImageIcon[][] data = new ImageIcon[items.length][1];
+//
+//        int i = 0;
+//        for (PC_Parts item : items) {
+//            data[i][0] = item.getImage();
+//
+//            i++;
+//        }
+//        String[] column = {"Image"};
+//        JTable table = new JTable(data, column);
+//        JScrollPane itemGridPanel = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+//        return itemGridPanel;
+//
+//    }
+
     private void filterPanelSetup() {
         JPanel filterPanel = new JPanel();
-        BoxLayout boxLayout = new BoxLayout(filterPanel,BoxLayout.Y_AXIS); // Box Layout
+        BoxLayout boxLayout = new BoxLayout(filterPanel, BoxLayout.Y_AXIS); // Box Layout
         filterPanel.setLayout(boxLayout);
         filterPanel.setBackground(Color.WHITE);
         filterPanel.setPreferredSize(new Dimension(280, 1000));
         menuPagePanel.add(filterPanel, BorderLayout.EAST);
-        
-        filter.addActionListener((e) -> { filterButton();});
-        unfilter.addActionListener((e) -> { unfilterButton();});
-        selectedItemsButton.addActionListener((e) -> { selectedItemButton(); });
-        
+
+        filter.addActionListener((e) -> {
+            filterButton();
+        });
+        unfilter.addActionListener((e) -> {
+            unfilterButton();
+        });
+        selectedItemsButton.addActionListener((e) -> {
+            selectedItemButton();
+        });
+
         // SMALL DIVIDER
         ImageIcon dividerOneImg = new ImageIcon(resourcesFolder + "\\divider.png");
         dividerOneImg = imageIconResize(dividerOneImg, 2000, 10);
         JLabel dividerOne = new JLabel(dividerOneImg);
-        
+
         ImageIcon dividerTwoImg = new ImageIcon(resourcesFolder + "\\divider.png");
         dividerTwoImg = imageIconResize(dividerTwoImg, 2000, 10);
         JLabel dividerTwo = new JLabel(dividerTwoImg);
-        
+
         // PERIPHERALS (LARGE TEXT, BOLD)
-        peripherals.setBounds(0,0,0,0);
+        peripherals.setBounds(0, 0, 0, 0);
         peripherals.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         peripherals.setFont(largeFontBold);
-        
+
         // FILTER BY PERIPHERLAS (SMALL TEXT)
         filterPeripherals.setFont(smallFontBold);
-        
+
         // KEYBOARD (MEDIUM, CHECKBOX)
         keyboard.setOpaque(false);
-        keyboard.setBounds(0,0,0,0);
+        keyboard.setBounds(0, 0, 0, 0);
         keyboard.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         keyboard.setFont(smallFontPlain);
-        
+
         // WEBCAM (MEDIUM, CHECKBOX)
         webcam.setOpaque(false);
-        webcam.setBounds(0,0,0,0);
+        webcam.setBounds(0, 0, 0, 0);
         webcam.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         webcam.setFont(smallFontPlain);
-        
+
         // CHASSIS (MEDIUM, CHECKBOX)
         chassis.setOpaque(false);
-        chassis.setBounds(0,0,0,0);
+        chassis.setBounds(0, 0, 0, 0);
         chassis.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         chassis.setFont(smallFontPlain);
-        
+
         // MONITOR (MEDIUM, CHECKBOX)
         monitor.setOpaque(false);
-        monitor.setBounds(0,0,0,0);
+        monitor.setBounds(0, 0, 0, 0);
         monitor.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         monitor.setFont(smallFontPlain);
-        
+
         // MOUSE (MEDIUM, CHECKBOX)
         mouse.setOpaque(false);
-        mouse.setBounds(0,0,0,0);
+        mouse.setBounds(0, 0, 0, 0);
         mouse.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         mouse.setFont(smallFontPlain);
-        
+
         // COMPONENTS (LARGE TEXT, BOLD)
-        components.setBounds(0,0,0,0);
+        components.setBounds(0, 0, 0, 0);
         components.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         components.setFont(largeFontBold);
-        
-        
+
         // FILTER BY COMPONENTS (SMALL TEXT)
         filterComponents.setFont(smallFontBold);
-        
+
         // CPU (MEDIUM, CHECKBOX)
         cpu.setOpaque(false);
-        cpu.setBounds(0,0,0,0);
+        cpu.setBounds(0, 0, 0, 0);
         cpu.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         cpu.setFont(smallFontPlain);
-        
+
         // GPU (MEDIUM, CHECKBOX)
         gpu.setOpaque(false);
-        gpu.setBounds(0,0,0,0);
+        gpu.setBounds(0, 0, 0, 0);
         gpu.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         gpu.setFont(smallFontPlain);
-        
+
         // RAM (MEDIUM, CHECKBOX)
         ram.setOpaque(false);
-        ram.setBounds(0,0,0,0);
+        ram.setBounds(0, 0, 0, 0);
         ram.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         ram.setFont(smallFontPlain);
-        
+
         // STORAGE (MEDIUM, CHECKBOX)
         storage.setOpaque(false);
-        storage.setBounds(0,0,0,0);
+        storage.setBounds(0, 0, 0, 0);
         storage.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         storage.setFont(smallFontPlain);
-        
+
         // MOBO (MEDIUM, CHECKBOX)
         mobo.setOpaque(false);
-        mobo.setBounds(0,0,0,0);
+        mobo.setBounds(0, 0, 0, 0);
         mobo.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         mobo.setFont(smallFontPlain);
-        
+
         // FILTER (JBUTTON) this isn't doing anything for some reason...
         filter.setOpaque(false);
-        filter.setSize(50,50);
+        filter.setSize(50, 50);
 
         // UNFILTER (JBUTTON) this one too....
         unfilter.setOpaque(false);
-        unfilter.setSize(50,50);
+        unfilter.setSize(50, 50);
         unfilter.setAlignmentX(JLabel.LEFT_ALIGNMENT);
-        
+
         // CART (JBUTTON) and this one....
         checkOut.setOpaque(false);
-        checkOut.setSize(50,50);
+        checkOut.setSize(50, 50);
         checkOut.addActionListener((e) -> {
             menuPageWindow.dispose();
             new OrderForm();
         });
 
         // Implementation; sorry for long-ass code idk how to optimize this yet.
-        
         filterPanel.add(peripherals);
         filterPanel.add(filterPeripherals);
         filterPanel.add(keyboard);
@@ -382,84 +401,106 @@ public class MenuPage extends Values{
         filterPanel.add(unfilter);
         filterPanel.add(selectedItemsButton);
         filterPanel.add(checkOut);
-        
+
     }
-    
+
     //THIS FUNCTION IS SLOW. MORE ITEMS = MORE SLOWER
-    private void filterButton(){
+    private void filterButton() {
         filteredItems.clear();
-        if (keyboard.isSelected()){
+        if (keyboard.isSelected()) {
             System.out.println("Keyboard Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Keyboard) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Keyboard) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (webcam.isSelected()){
+        if (webcam.isSelected()) {
             System.out.println("Webcam Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Webcam) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Webcam) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (chassis.isSelected()){
+        if (chassis.isSelected()) {
             System.out.println("Chassis Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Chassis) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Chassis) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (monitor.isSelected()){
+        if (monitor.isSelected()) {
             System.out.println("Monitor Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Monitor) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Monitor) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (mouse.isSelected()){
+        if (mouse.isSelected()) {
             System.out.println("Mouse Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Mouse) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Mouse) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (cpu.isSelected()){
+        if (cpu.isSelected()) {
             System.out.println("CPU Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Processor) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Processor) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (gpu.isSelected()){
+        if (gpu.isSelected()) {
             System.out.println("GPU Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Graphics) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Graphics) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (ram.isSelected()){
+        if (ram.isSelected()) {
             System.out.println("RAM Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Memory) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Memory) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (storage.isSelected()){
+        if (storage.isSelected()) {
             System.out.println("Storage Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Storage) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Storage) {
+                    filteredItems.add(item);
+                }
             }
         }
-        if (mobo.isSelected()){
+        if (mobo.isSelected()) {
             System.out.println("Motherboard Selected.\n");
-            for (PC_Parts item: items) {
-                if(item instanceof Motherboard) { filteredItems.add(item); }
+            for (PC_Parts item : items) {
+                if (item instanceof Motherboard) {
+                    filteredItems.add(item);
+                }
             }
         }
-        
-        for(PC_Parts filteredItem : filteredItems) {
-            System.out.println(filteredItem.getName());
+
+//        for(PC_Parts filteredItem : filteredItems) {
+//            System.out.println(filteredItem.getName());
+//        }
+        if (filteredItems.isEmpty()) {
+            unfilterButton();
+            return;
         }
-        
-        if(filteredItems.isEmpty()) { unfilterButton();  return; }
-        
+
         PC_Parts[] arrayFilteredItems = filteredItems.toArray(new PC_Parts[filteredItems.size()]);
         itemPanelSetup(arrayFilteredItems);
     }
-    
-    private void unfilterButton(){
+
+    private void unfilterButton() {
         keyboard.setSelected(false);
         webcam.setSelected(false);
         chassis.setSelected(false);
@@ -470,12 +511,12 @@ public class MenuPage extends Values{
         ram.setSelected(false);
         storage.setSelected(false);
         mobo.setSelected(false);
-        
+
         itemPanelSetup(items);
     }
-    
+
     private void selectedItemButton() {
-        PC_Parts[] arraySelectedItems = selectedItems.toArray(new PC_Parts[filteredItems.size()]);
+        PC_Parts[] arraySelectedItems = selectedItems.toArray(new PC_Parts[selectedItems.size()]);
         itemPanelSetup(arraySelectedItems);
     }
 }
