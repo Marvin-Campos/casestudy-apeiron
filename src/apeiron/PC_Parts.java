@@ -32,5 +32,10 @@ public class PC_Parts {
     public JPanel getDesc() {
         return new JPanel();
     }
+
+    public String getItemCode() {
+        return itemCode;
+    }
+    
     
 }

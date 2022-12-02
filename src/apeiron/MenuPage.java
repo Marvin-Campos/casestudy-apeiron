@@ -109,9 +109,10 @@ public class MenuPage extends Values{
     JCheckBox storage = new JCheckBox("STORAGE");
     JCheckBox mobo = new JCheckBox("MOTHERBOARD");
     JButton filter = new JButton("                                     FILTER                                ");
-    JButton unfilter = new JButton("                                  UNFILTER                               ");
+    JButton unfilter = new JButton("                                  UNFILTER                              ");
     // I'm sorry for using such a crude solution to center the buttons HAHAHAHAHAHAAHA  
-        JButton cart = new JButton("                                      CART                                   ");
+    JButton checkOut = new JButton("                                 CHECKOUT                              ");
+    JButton selectedItemsButton = new JButton("                                 SELECTED ITEMS                              ");
 
     public MenuPage() {
         run();
@@ -212,6 +213,12 @@ public class MenuPage extends Values{
                 }
                 System.out.println("");
             });
+            
+            for (PC_Parts selectedItem : selectedItems) {
+                if(item.getItemCode() == selectedItem.getItemCode()) {
+                    itemImageButton.setSelected(true);
+                }
+            }
 
             JLabel itemName = new JLabel(item.getName());
             itemName.setFont(mediumFontBold);
@@ -248,6 +255,7 @@ public class MenuPage extends Values{
         
         filter.addActionListener((e) -> { filterButton();});
         unfilter.addActionListener((e) -> { unfilterButton();});
+        selectedItemsButton.addActionListener((e) -> { selectedItemButton(); });
         
         // SMALL DIVIDER
         ImageIcon dividerOneImg = new ImageIcon(resourcesFolder + "\\divider.png");
@@ -345,9 +353,9 @@ public class MenuPage extends Values{
         unfilter.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         
         // CART (JBUTTON) and this one....
-        cart.setOpaque(false);
-        cart.setSize(50,50);
-        cart.addActionListener((e) -> {
+        checkOut.setOpaque(false);
+        checkOut.setSize(50,50);
+        checkOut.addActionListener((e) -> {
             menuPageWindow.dispose();
             new OrderForm();
         });
@@ -372,7 +380,8 @@ public class MenuPage extends Values{
         filterPanel.add(dividerTwo);
         filterPanel.add(filter);
         filterPanel.add(unfilter);
-        filterPanel.add(cart);
+        filterPanel.add(selectedItemsButton);
+        filterPanel.add(checkOut);
         
     }
     
@@ -465,4 +474,8 @@ public class MenuPage extends Values{
         itemPanelSetup(items);
     }
     
+    private void selectedItemButton() {
+        PC_Parts[] arraySelectedItems = selectedItems.toArray(new PC_Parts[filteredItems.size()]);
+        itemPanelSetup(arraySelectedItems);
+    }
 }
