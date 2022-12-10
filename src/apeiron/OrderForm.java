@@ -1,7 +1,9 @@
 package apeiron;
 
 import java.awt.*;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Vector;
 import javax.swing.*;
 
@@ -10,6 +12,9 @@ public class OrderForm extends Values {
     JFrame orderFormWindow = new JFrame("Order Form");
     JPanel orderFormPanel = new JPanel();
     String name;
+    boolean isSeniorOrPWD;
+    double totalAmount, grandTotalAmount, VAT, taxRate = 0.12, discount, discountRate = 0.2; //rates are according to maam's
+    double amountTendered, changeAmount;
 
     PC_Parts[] items;
 
@@ -23,10 +28,22 @@ public class OrderForm extends Values {
     }
 
     private void tanunginAngCustomer() {
-        name = JOptionPane.showInputDialog(null, "Please enter your customer name", "Customer Name", JOptionPane.QUESTION_MESSAGE);
 
-        if (name == null || name.isEmpty()) {
-            tanunginAngCustomer();
+        
+        while (true) {
+            if (name == null || name.isEmpty()) {
+                name = JOptionPane.showInputDialog(null, "Please enter your customer name", "Customer Name", JOptionPane.QUESTION_MESSAGE);
+            } else {
+                break;
+            }
+        }
+
+        int response = JOptionPane.showConfirmDialog(null, "Are you a senior citizen or PWD?", "Senior Citizen/PWD", JOptionPane.YES_NO_OPTION);
+
+        if (response == JOptionPane.YES_OPTION) {
+            isSeniorOrPWD = true;
+        } else {
+            isSeniorOrPWD = false;
         }
     }
 
@@ -42,8 +59,8 @@ public class OrderForm extends Values {
         orderFormWindow.add(orderFormPanel);
 
         tanunginAngCustomer();
-        System.out.println(name);
         orderFormPanelSetup();
+        calculate();
 
         orderFormWindow.setVisible(true);
     }
@@ -65,20 +82,31 @@ public class OrderForm extends Values {
 
     private JPanel infoPanelSetup() {
         JPanel infoPanel = new JPanel();
+        infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.X_AXIS));
+//        infoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
         JLabel customerName = textSetup("Customer Name: " + name, mediumFontBold);
-        JLabel date = textSetup("Date: ", mediumFontBold);
-        JLabel transactionNumber = textSetup("Transaction Number: ", mediumFontBold);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        JLabel dateText = textSetup("Date: " + formatter.format(date), mediumFontBold);
+
+        int max = 10000;
+        int min = 1000;
+        int randomNum = (int) (Math.random() * (max - min + 1) + min);
+        JLabel transactionNumber = textSetup("Transaction Number: " + randomNum, mediumFontBold);
 
         infoPanel.add(customerName);
-        infoPanel.add(date);
+        infoPanel.add(Box.createHorizontalGlue());
+        infoPanel.add(dateText);
+        infoPanel.add(Box.createHorizontalGlue());
         infoPanel.add(transactionNumber);
-        
+
         return infoPanel;
     }
 
     private JScrollPane cartTableSetup() {
-        System.out.println(items.length);
+        System.out.println("Number of items: " + items.length);
         String[][] data = new String[items.length][6];
 
         int i = 0;
@@ -116,6 +144,27 @@ public class OrderForm extends Values {
         computationsPanel.add(b);
 
         return computationsPanel;
+    }
+
+    private void calculate() {
+        for (PC_Parts item : items) {
+            totalAmount += item.quantity * item.prize;
+        }
+        
+        if (isSeniorOrPWD == true) {
+            discount = totalAmount * discountRate;
+        } else {
+            discount = 0;
+        }
+
+        VAT = (totalAmount - discount) * taxRate;
+
+        grandTotalAmount = totalAmount + VAT - discount;
+
+        System.out.println("Total Amount: " + totalAmount);
+        System.out.println("Discount: " + discount);
+        System.out.println("VAT: " + VAT);
+        System.out.println("Grand Total Amount: " + grandTotalAmount);
     }
 
 }
