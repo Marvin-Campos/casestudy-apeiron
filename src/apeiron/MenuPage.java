@@ -3,6 +3,7 @@ package apeiron;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.Arrays;
 import java.util.Vector;
 
 public class MenuPage extends Values {
@@ -109,6 +110,12 @@ public class MenuPage extends Values {
     JButton selectedItemsButton = new JButton("SELECTED ITEMS");
 
     public MenuPage() {
+        run();
+    }
+    
+    public MenuPage(PC_Parts[] selectedItems) {
+        this.selectedItems.clear();
+        this.selectedItems = new Vector<PC_Parts>(Arrays.asList(selectedItems));;
         run();
     }
 

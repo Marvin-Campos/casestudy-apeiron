@@ -29,7 +29,6 @@ public class OrderForm extends Values {
 
     private void tanunginAngCustomer() {
 
-        
         while (true) {
             if (name == null || name.isEmpty()) {
                 name = JOptionPane.showInputDialog(null, "Please enter your customer name", "Customer Name", JOptionPane.QUESTION_MESSAGE);
@@ -59,8 +58,8 @@ public class OrderForm extends Values {
         orderFormWindow.add(orderFormPanel);
 
         tanunginAngCustomer();
-        orderFormPanelSetup();
         calculate();
+        orderFormPanelSetup();
 
         orderFormWindow.setVisible(true);
     }
@@ -83,7 +82,6 @@ public class OrderForm extends Values {
     private JPanel infoPanelSetup() {
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.X_AXIS));
-//        infoPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
         JLabel customerName = textSetup("Customer Name: " + name, mediumFontBold);
 
@@ -121,12 +119,6 @@ public class OrderForm extends Values {
             i++;
         }
 
-//         for (String[] d : data) {
-//             System.out.print(d[0] + ", ");
-//             System.out.print(d[1] + ", ");
-//             System.out.print(d[2]);
-//             System.out.println("");
-//         }
         String column[] = {"NAME", "ITEM CODE", "QUANTITY", "ITEM DESCRIPTION", "PRICE", "AMOUNT"};
         JTable table = new JTable(data, column);
         table.setEnabled(false);
@@ -136,48 +128,44 @@ public class OrderForm extends Values {
         return sp;
     }
 
-    //Austin pls work here. Eto yung naka blue border
+    JLabel amountTenderedV = new JLabel("PHP " + this.amountTendered);
+    JLabel changeV = new JLabel("PHP " + changeAmount);
+    JButton b = new JButton("Return To Menu");
+    JButton a = new JButton("Pay");
+
     private JPanel computationsPanelSetup() {
         JPanel computationsPanel = new JPanel();
         computationsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
-       
+
         BoxLayout boxLayout = new BoxLayout(computationsPanel, BoxLayout.Y_AXIS); // Box Layout
         computationsPanel.setLayout(boxLayout);
 
         computationsPanel.setLayout(new BoxLayout(computationsPanel, BoxLayout.Y_AXIS));
         computationsPanel.setPreferredSize(new Dimension(240, 200));
 
-        // Just Putting These Here as Tests. Remove if necessary
-        int totalAmountPHP = 193481;
-        int vatPHP = 12;
-        int discountPHP = 20;
-        int grandTotalAmountPHP = 28472894;
-        int amountTenderedPHP = 198491448;
-        int changePHP = -4;
-      
-
-        
         JLabel totalAmount = new JLabel("Total Amount: ");
         JLabel vat = new JLabel("VAT: ");
         JLabel discount = new JLabel("Discount: ");
         JLabel grandTotalAmount = new JLabel("Grand Total Amount: ");
-        JLabel amountTendered = new JLabel("Amount Tendered: ");
-        JLabel change = new JLabel("Change: ");
-        
-        JLabel totalAmountV = new JLabel("PHP " + totalAmountPHP);
-        JLabel vatV = new JLabel("PHP " + vatPHP);
-        JLabel discountV = new JLabel("PHP " + discountPHP);
-        JLabel grandTotalAmountV = new JLabel("PHP " + grandTotalAmountPHP);
-        JLabel amountTenderedV = new JLabel("PHP " + amountTenderedPHP);
-        JLabel changeV = new JLabel("PHP " + changePHP);
+        JLabel amountTenderedText = new JLabel("Amount Tendered: ");
+        JLabel changeText = new JLabel("Change: ");
 
-        
-        JButton b = new JButton("Return To Cart");
-        JButton a = new JButton("Pay");
-        
+        JLabel totalAmountV = new JLabel("PHP " + this.totalAmount);
+        JLabel vatV = new JLabel("PHP " + VAT);
+        JLabel discountV = new JLabel("PHP " + this.discount);
+        JLabel grandTotalAmountV = new JLabel("PHP " + this.grandTotalAmount);
+
+        b.addActionListener((e) -> {
+            new MenuPage(this.items);
+            orderFormWindow.dispose();
+        });
+
+        a.addActionListener((e) -> {
+            pay();
+        });
+
         GridLayout gridLayout = new GridLayout(7, 2);
         JPanel gridArea = new JPanel(gridLayout);
-        
 
         computationsPanel.add(gridArea);
         gridArea.add(totalAmount);
@@ -188,17 +176,13 @@ public class OrderForm extends Values {
         gridArea.add(discountV);
         gridArea.add(grandTotalAmount);
         gridArea.add(grandTotalAmountV);
-        gridArea.add(amountTendered);
+        gridArea.add(amountTenderedText);
         gridArea.add(amountTenderedV);
-        gridArea.add(change);
+        gridArea.add(changeText);
         gridArea.add(changeV);
         gridArea.add(b);
         gridArea.add(a);
-        
-        
-        
-        
-        
+
         return computationsPanel;
     }
 
@@ -206,7 +190,7 @@ public class OrderForm extends Values {
         for (PC_Parts item : items) {
             totalAmount += item.quantity * item.prize;
         }
-        
+
         if (isSeniorOrPWD == true) {
             discount = totalAmount * discountRate;
         } else {
@@ -223,4 +207,32 @@ public class OrderForm extends Values {
         System.out.println("Grand Total Amount: " + grandTotalAmount);
     }
 
+    private void pay() {
+        while (true) {
+            try {
+                String amountTenderedStr = JOptionPane.showInputDialog(null, "Please enter the amount", "Amount", JOptionPane.PLAIN_MESSAGE);
+                amountTendered = Double.parseDouble(amountTenderedStr);
+                if (amountTendered < grandTotalAmount) {
+                    JOptionPane.showMessageDialog(null, "Payment amount must not be less than the grand total.", "Not enough payment", JOptionPane.ERROR_MESSAGE);
+                    continue;
+                } else {
+                    amountTenderedV.setText(amountTenderedStr);
+                    changeAmount = amountTendered - grandTotalAmount;
+                    changeV.setText(String.valueOf(changeAmount));
+                    
+                    b.setEnabled(false);
+                    a.setEnabled(false);
+                    
+                    JOptionPane.showMessageDialog(null, "Thank you " + name + " for shopping with us!", "THANK YOU", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                }
+
+            } catch (NumberFormatException nfe) {
+                continue;
+            } catch (NullPointerException npe) {
+                break;
+            }
+
+        }
+    }
 }
