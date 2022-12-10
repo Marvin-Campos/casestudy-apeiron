@@ -53,15 +53,12 @@ public class OrderForm extends Values {
         JLabel orderFormText = textSetup("CART", mediumFontBold);
         JLabel orderFormSubtext = textSetup("CONFIRM YOUR BASKET", smallFontPlain);
         JPanel infoPanel = infoPanelSetup();
-//        JLabel apeironTextPanel = textSetup("APEIRON", mediumFontPlain);
-//        apeironTextPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
         JScrollPane table = cartTableSetup();
         JPanel computationsPanel = computationsPanelSetup();
 
         orderFormPanel.add(orderFormText);
         orderFormPanel.add(orderFormSubtext);
         orderFormPanel.add(infoPanel);
-//        orderFormPanel.add(apeironTextPanel);
         orderFormPanel.add(table);
         orderFormPanel.add(computationsPanel);
     }
@@ -106,14 +103,12 @@ public class OrderForm extends Values {
         JTable table = new JTable(data, column);
         table.setEnabled(false);
         table.setFont(smallFontPlain);
-//        table.setDefaultEditor(Object.class, null);
-//        table.setEnabled(false);
-//        table.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
 
         JScrollPane sp = new JScrollPane(table);
         return sp;
     }
 
+    //Austin pls work here. Eto yung naka blue border
     private JPanel computationsPanelSetup() {
         JPanel computationsPanel = new JPanel();
         computationsPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));

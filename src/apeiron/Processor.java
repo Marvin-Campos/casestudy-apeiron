@@ -20,6 +20,8 @@ public class Processor extends Component {
     
     @Override
     public JPanel getDesc() {
+        super.description = "Price: 100000000000000000000000000000000000";
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);
