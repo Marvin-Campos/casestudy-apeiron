@@ -20,6 +20,9 @@ public class Graphics extends Component{
 
     @Override
     public JPanel getDesc() {
+        
+        super.description = coreCount + " Core" + coreClockSpeed + "GHz " + memorySize + "VRAM GPU"; 
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

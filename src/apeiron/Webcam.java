@@ -19,6 +19,9 @@ public class Webcam extends Peripheral {
     
     @Override
     public JPanel getDesc() {
+        
+        super.description = resolution + " " + aspectRatio + " Webcam";
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

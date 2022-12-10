@@ -20,6 +20,9 @@ public class Memory extends Component {
     
     @Override
     public JPanel getDesc() {
+        
+        super.description = ramSpeed + "MHz " + memoryCapacity + "GB " + dataRate + " RAM: Overclock Ready, " + isOverclockable + "; RGB," + hasRGB; 
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

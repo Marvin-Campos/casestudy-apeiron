@@ -20,6 +20,9 @@ public class Motherboard extends Component {
 
     @Override
     public JPanel getDesc() {
+        
+        super.description = socketType + " " + motherboardSize + " Motherboard: WiFi, " + hasWifiConnectivity + "; RGB, " + hasRGB + "; Overclock Ready. " + isOverclockable;
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

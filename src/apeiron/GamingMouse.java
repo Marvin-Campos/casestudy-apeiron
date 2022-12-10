@@ -18,6 +18,8 @@ public class GamingMouse extends Mouse {
     
     @Override
     public JPanel getDesc() {
+        super.description = color + " " + weight  + "g " + dpi + " DPI Gaming Mouse: " + numberOfButtons + " buttons, " + "wireless:" + isWireless;
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

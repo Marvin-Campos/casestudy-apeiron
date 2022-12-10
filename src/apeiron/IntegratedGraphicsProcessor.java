@@ -19,6 +19,10 @@ public class IntegratedGraphicsProcessor extends Processor {
     }
     @Override
     public JPanel getDesc() {
+        
+        super.description = integratedCoreCount + " Cores " + integratedCoreClockSpeed + "GHz "
+                + integratedMemorySize + "GB VRAM with " + baseClockSpeed + "GHz, " + maxClockSpeed + "GHZ Turbo Speed CPU";
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

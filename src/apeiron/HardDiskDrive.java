@@ -16,6 +16,9 @@ public class HardDiskDrive extends Storage {
     
     @Override
     public JPanel getDesc() {
+        
+        super.description = revolutionPerMinute + " RPM " + storageCapacity + " GB HDD: RGB," + hasRGB; 
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

@@ -18,6 +18,8 @@ public class SolidStateDrive extends Storage {
     
     @Override
     public JPanel getDesc() {
+        
+        super.description = storageCapacity + "GB " + formFactor + " " + interface_ + " SSD: Overclock Ready," + isOverclockable + "; RGB, " + hasRGB;       
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

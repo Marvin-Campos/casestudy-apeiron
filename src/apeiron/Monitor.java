@@ -23,6 +23,9 @@ public class Monitor extends Peripheral {
     
     @Override
     public JPanel getDesc() {
+        
+        super.description = color + " " + sizeInInches + " inch " + resolution + "@" + refreshRate + " " + displayType + " Monitor: Wireless, " + isWireless; 
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

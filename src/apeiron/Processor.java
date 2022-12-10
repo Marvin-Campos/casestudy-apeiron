@@ -20,7 +20,7 @@ public class Processor extends Component {
     
     @Override
     public JPanel getDesc() {
-        super.description = "Price: 100000000000000000000000000000000000";
+        super.description = baseClockSpeed + "GHz, " + maxClockSpeed + "GHZ Turbo Speed CPU";
         
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));

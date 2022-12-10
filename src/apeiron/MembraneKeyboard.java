@@ -18,6 +18,8 @@ public class MembraneKeyboard extends Keyboard {
 
             @Override
     public JPanel getDesc() {
+        super.description = color + " " + keyboardSize + " % Membrane Keyboard Keyboard: For Comshop, " + isComputerShopCompatible + " For Office Work: " + isOfficeCompatible;
+        
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         JLabel price = new JLabel("Price: PHP " + prize);

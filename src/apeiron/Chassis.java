@@ -21,6 +21,10 @@ public class Chassis extends Peripheral {
     }
    @Override
     public JPanel getDesc() {
+        
+          super.description = color + " " + chassisSize + " Chassis: Glass Side Pane, " + hasGlassSidePane +
+                 "; Front Panel Mesh, " + hasFrontPanelMesh + "; " + fanCapacity + " Fans.";
+       
         JPanel descPanel = new JPanel();
         descPanel.setLayout(new BoxLayout(descPanel, BoxLayout.PAGE_AXIS));
         

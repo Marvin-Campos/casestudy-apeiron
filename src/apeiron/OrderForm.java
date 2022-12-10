@@ -139,10 +139,66 @@ public class OrderForm extends Values {
     //Austin pls work here. Eto yung naka blue border
     private JPanel computationsPanelSetup() {
         JPanel computationsPanel = new JPanel();
-        computationsPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
-        JButton b = new JButton("ASD");
-        computationsPanel.add(b);
+        computationsPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+       
+        BoxLayout boxLayout = new BoxLayout(computationsPanel, BoxLayout.Y_AXIS); // Box Layout
+        computationsPanel.setLayout(boxLayout);
 
+        computationsPanel.setLayout(new BoxLayout(computationsPanel, BoxLayout.Y_AXIS));
+        computationsPanel.setPreferredSize(new Dimension(240, 200));
+
+        // Just Putting These Here as Tests. Remove if necessary
+        int totalAmountPHP = 193481;
+        int vatPHP = 12;
+        int discountPHP = 20;
+        int grandTotalAmountPHP = 28472894;
+        int amountTenderedPHP = 198491448;
+        int changePHP = -4;
+      
+
+        
+        JLabel totalAmount = new JLabel("Total Amount: ");
+        JLabel vat = new JLabel("VAT: ");
+        JLabel discount = new JLabel("Discount: ");
+        JLabel grandTotalAmount = new JLabel("Grand Total Amount: ");
+        JLabel amountTendered = new JLabel("Amount Tendered: ");
+        JLabel change = new JLabel("Change: ");
+        
+        JLabel totalAmountV = new JLabel("PHP " + totalAmountPHP);
+        JLabel vatV = new JLabel("PHP " + vatPHP);
+        JLabel discountV = new JLabel("PHP " + discountPHP);
+        JLabel grandTotalAmountV = new JLabel("PHP " + grandTotalAmountPHP);
+        JLabel amountTenderedV = new JLabel("PHP " + amountTenderedPHP);
+        JLabel changeV = new JLabel("PHP " + changePHP);
+
+        
+        JButton b = new JButton("Return To Cart");
+        JButton a = new JButton("Pay");
+        
+        GridLayout gridLayout = new GridLayout(7, 2);
+        JPanel gridArea = new JPanel(gridLayout);
+        
+
+        computationsPanel.add(gridArea);
+        gridArea.add(totalAmount);
+        gridArea.add(totalAmountV);
+        gridArea.add(vat);
+        gridArea.add(vatV);
+        gridArea.add(discount);
+        gridArea.add(discountV);
+        gridArea.add(grandTotalAmount);
+        gridArea.add(grandTotalAmountV);
+        gridArea.add(amountTendered);
+        gridArea.add(amountTenderedV);
+        gridArea.add(change);
+        gridArea.add(changeV);
+        gridArea.add(b);
+        gridArea.add(a);
+        
+        
+        
+        
+        
         return computationsPanel;
     }
 
