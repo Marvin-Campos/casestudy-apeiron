@@ -8,16 +8,16 @@ public class PC_Parts {
 
     private String name;
     protected int prize;
-    private String description = "";
+    protected String description = "";
     private String itemCode;
-    private int stocks; //attribute might not be use
+    protected int quantity;
     private ImageIcon image;
 
     public PC_Parts(String name, int prize, String itemCode, int stocks, ImageIcon image) {
         this.name = name;
         this.prize = prize;
         this.itemCode = itemCode;
-        this.stocks = stocks;
+        this.quantity = stocks;
         this.image = image;
     }
 

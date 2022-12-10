@@ -1,12 +1,10 @@
 package apeiron;
 
-import java.lang.reflect.Field;
-
 public class Apeiron {
 
     public static void main(String[] args) {
-        new LoginPage();
-//        new MenuPage();
+//        new LoginPage();
+        new MenuPage();
 //        new OrderForm();
     }
 
@@ -18,6 +16,9 @@ TODOS
     - menu too slow XDDD
 - do order form
     - in getDesc assign a value to description from the super class
+    - jtable add all column
+    - make quantity editable
+    - 
  */
 
  /*

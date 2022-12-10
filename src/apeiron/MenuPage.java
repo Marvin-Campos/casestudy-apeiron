@@ -129,6 +129,7 @@ public class MenuPage extends Values {
         menuPageWindow.setVisible(true);
     }
 
+    
     private void itemPanelSetup(PC_Parts[] items) {
         itemPanel.removeAll();
         itemPanel.setLayout(new BoxLayout(itemPanel, BoxLayout.PAGE_AXIS));
@@ -164,17 +165,48 @@ public class MenuPage extends Values {
             itemPanel.setLayout(new BoxLayout(itemPanel, BoxLayout.PAGE_AXIS));
 
             JToggleButton itemImageButton = new JToggleButton(imageIconResize(item.getImage(), 100, 100));
+            
+            //when item is selected, show this quantity panel
+            JPanel quantityPanel = new JPanel();
+            quantityPanel.setAlignmentX(JPanel.LEFT_ALIGNMENT);
+            JLabel quantityText = new JLabel("Qty: " + item.quantity);
+            JButton addQuantity = new JButton("+");
+            addQuantity.addActionListener((e) -> { 
+                item.quantity++;
+                quantityText.setText("Qty: " + item.quantity);
+            });
+            JButton subtractQuantity = new JButton("-");
+            subtractQuantity.addActionListener((e) -> {
+                if(item.quantity <= 1) { return; }
+                else { 
+                    item.quantity--;
+                    quantityText.setText("Qty: " + item.quantity);
+                }
+            });
+            quantityPanel.add(quantityText);
+            quantityPanel.add(addQuantity);
+            quantityPanel.add(subtractQuantity);
+            
             itemImageButton.addActionListener((e) -> {
                 if (itemImageButton.isSelected()) {
                     selectedItems.add(item);
+                    itemPanel.add(quantityPanel, 0);
+                    itemPanel.revalidate();
+                    itemPanel.repaint();
                 } else {
                     selectedItems.remove(item);
+                    itemPanel.remove(quantityPanel);
+                    itemPanel.revalidate();
+                    itemPanel.repaint();
                 }
             });
 
             for (PC_Parts selectedItem : selectedItems) {
                 if (item.getItemCode() == selectedItem.getItemCode()) {
                     itemImageButton.setSelected(true);
+                    itemPanel.add(quantityPanel, 0);
+                    itemPanel.revalidate();
+                    itemPanel.repaint();
                 }
             }
 
@@ -493,7 +525,7 @@ public class MenuPage extends Values {
             JOptionPane.showMessageDialog(null, "Please select an item.", "Empty Cart", 1);
             return;
         }
-        
+
         int reply = JOptionPane.showConfirmDialog(null, "Do you want to proceed to checkout?", "Please confirm your items.", JOptionPane.YES_NO_OPTION);
         if (reply == JOptionPane.YES_OPTION) {
             menuPageWindow.dispose();
